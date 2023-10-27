@@ -28,6 +28,7 @@ const VideoComponent = () => {
           preload="none"
           data-video="0"
           controls
+          className="video-slide"
         />
       </Video>
     </Media>
