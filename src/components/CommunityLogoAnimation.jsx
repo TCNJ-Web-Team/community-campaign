@@ -48,7 +48,6 @@ const CommunityLogoAnimation = () => {
           scale: 1.1,
           transformOrigin: () => "50% 50%",
 
-          yoyo: true,
           ease: "power1.in", // Apply Power1.easeInOut easing
         },
         1 // start time in tl
