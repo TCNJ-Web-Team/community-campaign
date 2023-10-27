@@ -3,6 +3,7 @@ import Intro from "../components/Intro.astro";
 import ParallaxContainer from "../components/Parallax";
 import "../styles/home.scss";
 import CarouselContainer from "../components/CarouselContainer";
+import VideoComponent from "../components/VideoComponent";
 
 import Layout from "../layouts/Layout.astro";
 ---
@@ -66,5 +67,6 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <button>Download TCNJ Pavilion Campaign Overview</button>
     </CarouselContainer>
+    <VideoComponent client:load />
   </main>
 </Layout>
