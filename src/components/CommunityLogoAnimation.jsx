@@ -23,26 +23,26 @@ const CommunityLogoAnimation = () => {
       //   },
       //   0.25 // start time in tl
       // );
-      tlLine
-        .to(
-          "#left-line",
-          {
-            strokeDashoffset: 0,
-            duration: 3,
-            ease: "power1.inOut",
-          },
-          0.5
-        )
-        .to(
-          "#right-line",
-          {
-            strokeDashoffset: 0,
-            duration: 3,
+      tlLine.to(
+        "#left-line",
+        {
+          strokeDashoffset: 0,
+          duration: 3,
+          ease: "power1.inOut",
+        },
+        0.5
+      );
 
-            ease: "power1.inOut",
-          },
-          0.5
-        );
+      tlLine.to(
+        "#right-line",
+        {
+          strokeDashoffset: 0,
+          duration: 3,
+
+          ease: "power1.inOut",
+        },
+        -0.5
+      );
     }, logoComponent); // <- selector scoping
     return () => ctx.revert();
   }, []);
