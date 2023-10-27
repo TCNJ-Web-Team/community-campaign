@@ -1,0 +1,20 @@
+---
+import CommunityLogoAnimation from "./CommunityLogoAnimation";
+// import CommunityLogoAnimation from "./CommunityLogoAnimation";
+interface Props {
+  heading: string;
+  body?: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+const { heading, body, buttonLink, buttonText } = Astro.props;
+---
+
+<section class="intro">
+  <!-- <CommunityLogoAnimation client:load /> -->
+  <CommunityLogoAnimation client:load />
+  <h2>{heading}</h2>
+  <p>{body}</p>
+  {buttonText && <a href={buttonLink}>{buttonText}</a>}
+</section>
