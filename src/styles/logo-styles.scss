@@ -17,3 +17,14 @@
 .cls-3 {
   fill: #003d71;
 }
+
+line {
+  /* safari needs 300 300 for stroke-dasharray instead of single 300 */
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 100;
+  stroke: dodgerblue;
+  &#right-line {
+    stroke-dasharray: -100 -100;
+    stroke-dashoffset: -100;
+  }
+}

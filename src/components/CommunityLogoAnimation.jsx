@@ -10,19 +10,39 @@ const CommunityLogoAnimation = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       let tlLine = gsap.timeline();
-      tlLine.fromTo(
-        ".gsapFadeUp",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.25,
-          duration: 0.75,
-          delay: 0.25,
-          ease: "power1.out", // Apply Power1.easeInOut easing
-        },
-        0.25 // start time in tl
-      );
+      // tlLine.fromTo(
+      //   ".gsapFadeUp",
+      //   { opacity: 0, y: 20 },
+      //   {
+      //     opacity: 1,
+      //     y: 0,
+      //     stagger: 0.25,
+      //     duration: 0.75,
+      //     delay: 0.25,
+      //     ease: "power1.out", // Apply Power1.easeInOut easing
+      //   },
+      //   0.25 // start time in tl
+      // );
+      tlLine
+        .to(
+          "#left-line",
+          {
+            strokeDashoffset: 0,
+            duration: 3,
+            ease: "power1.inOut",
+          },
+          0.5
+        )
+        .to(
+          "#right-line",
+          {
+            strokeDashoffset: 0,
+            duration: 3,
+
+            ease: "power1.inOut",
+          },
+          0.5
+        );
     }, logoComponent); // <- selector scoping
     return () => ctx.revert();
   }, []);
