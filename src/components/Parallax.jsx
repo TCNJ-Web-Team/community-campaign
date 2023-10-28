@@ -1,11 +1,27 @@
-import React from "react";
-import { Parallax } from "react-parallax";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const ParallaxContainer = ({ image, alt, strength = 100, children, align }) => (
-  <Parallax bgImage={image} bgImageAlt={alt} strength={strength}>
-    <div className={align}>{children}</div>
-  </Parallax>
-);
+gsap.registerPlugin(ScrollTrigger);
 
-// https://www.npmjs.com/package/react-parallax
+const ParallaxContainer = () => {
+  let component = useRef();
+
+  useEffect(() => {
+    let scrollCtx = gsap.context(() => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".parallax-container",
+          scrub: true,
+          markers: true,
+          start: "top 60%",
+        },
+      });
+    }, component);
+    return () => scrollCtx.revert();
+  }, []);
+
+  return <div className="parallax-container" ref={component}></div>;
+};
+
 export default ParallaxContainer;

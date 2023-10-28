@@ -1,0 +1,22 @@
+---
+---
+
+<script type="module">
+  import { gsap } from "./node_modules/gsap";
+  import { ScrollTrigger } from "./node_modules/gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const IntroVideoRef = document.querySelector("parallax-two");
+ScrollTrigger.create({
+                trigger: IntroVideoRef,
+                scrub: true,
+                pin: IntroVideoRef,
+                start: '-100',
+                end: `+=300`,
+                markers: true,
+             
+            });
+
+</script>
+<section class="parallax-two" id="1">
+  Test secondary parallax
+</section>
