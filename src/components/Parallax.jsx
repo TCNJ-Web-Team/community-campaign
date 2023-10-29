@@ -1,10 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// const gsap = require("gsap");
+// const ScrollTrigger = require("gsap/ScrollTrigger");
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+const ScrollTrigger = require("gsap/ScrollTrigger");
 
+// import "https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js";
 gsap.registerPlugin(ScrollTrigger);
 
-const ParallaxContainer = () => {
+export default function Parallax() {
   let component = useRef();
 
   useEffect(() => {
@@ -21,7 +25,9 @@ const ParallaxContainer = () => {
     return () => scrollCtx.revert();
   }, []);
 
-  return <div className="parallax-container" ref={component}></div>;
-};
-
-export default ParallaxContainer;
+  return (
+    <div className="parallax-container" ref={component}>
+      Testing
+    </div>
+  );
+}

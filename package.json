@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.2.14",
     "@vidstack/player": "^1.6.5",
     "@vidstack/player-react": "^1.6.5",
+    "@vramana/video-react": "^2.1.1",
     "astro": "^3.4.0",
     "gsap": "npm:@gsap/shockingly@^3.12.2",
     "lit": "^2.8.0",
@@ -22,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-parallax": "^3.5.1",
     "sass": "^1.69.4",
-    "swiper": "^11.0.3"
+    "swiper": "^11.0.3",
+    "video-react": "^0.16.0"
   }
 }

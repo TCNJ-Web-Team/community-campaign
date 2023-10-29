@@ -1,3 +1,5 @@
 {
+  "target": "esnext",
+  "module": "commonjs",
   "extends": "astro/tsconfigs/base"
 }

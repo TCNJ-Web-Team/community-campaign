@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
 import { gsap } from "gsap";
-
+// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 import "../styles/logo-styles.scss";
 
+// gsap.registerPlugin(ScrollTrigger);
 const CommunityLogoAnimation = () => {
   let logoComponent = useRef();
 

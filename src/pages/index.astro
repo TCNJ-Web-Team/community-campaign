@@ -1,6 +1,6 @@
 ---
 import Intro from "../components/Intro.astro";
-import ParallaxContainer from "../components/Parallax";
+import Parallax from "../components/Parallax";
 import ParallaxTwo from "../components/ParallaxTwo.astro";
 import "../styles/home.scss";
 import CarouselContainer from "../components/CarouselContainer";
@@ -15,13 +15,7 @@ import Layout from "../layouts/Layout.astro";
 />
 <Layout title="For the Love of Community">
   <main>
-    <!-- <ParallaxContainer
-      image="https://tcnj.edu/custom/homepage/img/homepage-slides/fall-23/compressed/slide-1.jpg"
-      alt="the cat"
-      strength={200}
-      client:load
-      align="right"
-    > -->
+    <!-- <Parallax  client:load/> -->
         <!-- <ParallaxContainer client:load/> -->
 <ParallaxTwo />
     <Intro

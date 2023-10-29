@@ -1,22 +1,27 @@
 ---
 ---
-
-<script type="module">
-  import { gsap } from "./node_modules/gsap";
-  import { ScrollTrigger } from "./node_modules/gsap/ScrollTrigger";
+<script src="https://unpkg.com/gsap@3"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script type="module" is:inline>
+  // import "/astro/gsap/dist/gsap.js";
+  
+  // import "https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js";
+  
   gsap.registerPlugin(ScrollTrigger);
-  const IntroVideoRef = document.querySelector("parallax-two");
-ScrollTrigger.create({
-                trigger: IntroVideoRef,
-                scrub: true,
-                pin: IntroVideoRef,
-                start: '-100',
-                end: `+=300`,
-                markers: true,
-             
-            });
-
+  const IntroVideoRef = document.querySelector(".parallax-two");
+  ScrollTrigger.create({
+    trigger: IntroVideoRef,
+    scrub: true,
+    pin: IntroVideoRef,
+    markers: true,
+  });
+console.log('gsap')
 </script>
 <section class="parallax-two" id="1">
   Test secondary parallax
+
+
+  asdsdf
+  sdfsdf
+
 </section>
