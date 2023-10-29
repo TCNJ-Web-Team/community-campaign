@@ -60,9 +60,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
         className="mySwiper2"
         onSlideChange={stopVideos}
       >
-        <SwiperSlide>
-          <VideoComponent client:load />
-        </SwiperSlide>
+        <SwiperSlide>{/* <VideoComponent client:load /> */}</SwiperSlide>
         {carouselImages &&
           carouselImages.map((image, index) => {
             return (
