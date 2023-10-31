@@ -6,6 +6,7 @@ const useVideoPlayer = (videoElement) => {
     progress: 0,
     speed: 1,
     isMuted: false,
+    captionsPlaying: false,
   });
 
   const togglePlay = () => {
@@ -62,6 +63,29 @@ const useVideoPlayer = (videoElement) => {
       : (videoElement.current.muted = false);
   }, [playerState.isMuted, videoElement]);
 
+  const toggleCaptions = () => {
+    setPlayerState({
+      ...playerState,
+      captionsPlaying: !playerState.captionsPlaying,
+    });
+  };
+
+  //   useEffect(() => {
+  //     console.log(videoElement);
+  //     playerState.captionsPlaying
+  //       ? (videoElement.textTracks[0].mode = "disabled")
+  //       : (videoElement.textTracks[0].mode = "enabled");
+  //   }, [playerState.captionsPlaying, videoElement]);
+
+  useEffect(() => {
+    if (videoElement && videoElement.textTracks && videoElement.textTracks[0]) {
+      playerState.captionsPlaying
+        ? (videoElement.textTracks[0].mode = "disabled")
+        : (videoElement.textTracks[0].mode = "enabled");
+      console.log(videoElement.textTracks[0].mode);
+    }
+  }, [playerState.captionsPlaying, videoElement]);
+
   return {
     playerState,
     togglePlay,
@@ -69,6 +93,7 @@ const useVideoPlayer = (videoElement) => {
     handleVideoProgress,
     handleVideoSpeed,
     toggleMute,
+    toggleCaptions,
   };
 };
 

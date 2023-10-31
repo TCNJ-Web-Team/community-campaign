@@ -14,6 +14,7 @@ const CustomVideo = () => {
     handleVideoProgress,
     handleVideoSpeed,
     toggleMute,
+    toggleCaptions,
   } = useVideoPlayer(videoElement);
   return (
     <div className="container">
@@ -27,7 +28,7 @@ const CustomVideo = () => {
           <source type="video/mp4" src={video} />
 
           <track
-            preload=""
+            preload="true"
             kind="captions"
             label="Video Captions"
             srcLang="en"
@@ -63,6 +64,13 @@ const CustomVideo = () => {
           </select>
           <button className="mute-btn" onClick={toggleMute}>
             {!playerState.isMuted ? (
+              <i className="bx bxs-volume-full"></i>
+            ) : (
+              <i className="bx bxs-volume-mute"></i>
+            )}
+          </button>
+          <button className="captions-btn" onClick={toggleCaptions}>
+            {!playerState.captionsPlaying ? (
               <i className="bx bxs-volume-full"></i>
             ) : (
               <i className="bx bxs-volume-mute"></i>
