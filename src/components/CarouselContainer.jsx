@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import "../styles/swiper-styles.scss";
+import useVideoPlayer from "../hooks/useVideoPlayer";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -37,6 +38,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
       }
     });
   };
+
   return (
     // <Swiper
     //   spaceBetween={50}

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../styles/custom-video-player.scss";
 
-import video from "../assets/video.mp4";
+// import video from "../assets/video.mp4";
 // import captions from "../assets/diamond-1.vtt";
 import useVideoPlayer from "../hooks/useVideoPlayer";
 
@@ -35,17 +35,21 @@ const CustomVideo = () => {
     <div className="container">
       <div className="video-wrCustomVideoer">
         <video
+          preload="true"
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
-          src={video}
+          poster="/astro/images/pav-1.jpg"
           controls={falseElement}
           className={`video ${playerState.isPlaying ? "playing" : "stopped"}`}
         >
-          <source type="video/mp4" src={video} />
+          <source
+            type="video/mp4"
+            src="https://player.vimeo.com/progressive_redirect/playback/877982802/rendition/720p/file.mp4?loc=external&signature=bc200f96f6b07e8b374c471bda8ecca669eb66eb6ebc062747d83cee4bb49933"
+          />
 
           <track
-            preload={trueElement}
+            preload="true"
             kind="captions"
             label="Video Captions"
             srcLang="en"
