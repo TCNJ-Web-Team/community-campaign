@@ -5,9 +5,11 @@ import Scroll from "../components/Test";
 import "../styles/home.scss";
 import CarouselContainer from "../components/CarouselContainer";
 import VideoComponent from "../components/VideoComponent";
+import CustomVideo from "../components/CustomVideo";
 
 import Layout from "../layouts/Layout.astro";
 ---
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <link
   rel="stylesheet"
@@ -22,6 +24,7 @@ import Layout from "../layouts/Layout.astro";
       client:load
       align="right"
     > -->
+    <CustomVideo client:load/>
     <Scroll client:load/>
     <Intro
       heading="For the Love of Community"
@@ -68,6 +71,6 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <button>Download TCNJ Pavilion Campaign Overview</button>
     </CarouselContainer>
-    <VideoComponent client:load />
+    <!-- <VideoComponent client:load /> -->
   </main>
 </Layout>
