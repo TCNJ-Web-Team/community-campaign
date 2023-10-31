@@ -19,19 +19,21 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
+import CustomVideo from "./CustomVideo";
 
 const CarouselContainer = ({ carouselImages, children }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   // console.log(carouselImages);
   const stopVideos = () => {
     // console.log("Swipe");
-    const videos = document.querySelectorAll(".video-slide");
+    const videos = document.querySelectorAll(".video.playing");
 
     videos.forEach((video) => {
       // console.log("Video");
 
       if (video && !video.paused) {
         video.pause();
+        video.currentTime = 0; // Reset the video to time 0
       }
     });
   };
@@ -60,7 +62,10 @@ const CarouselContainer = ({ carouselImages, children }) => {
         className="mySwiper2"
         onSlideChange={stopVideos}
       >
-        <SwiperSlide>{/* <VideoComponent client:load /> */}</SwiperSlide>
+        <SwiperSlide>
+          {/* <VideoComponent /> */}
+          <CustomVideo client:load />
+        </SwiperSlide>
         {carouselImages &&
           carouselImages.map((image, index) => {
             return (
