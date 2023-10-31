@@ -11,18 +11,78 @@ const CommunityLogoAnimation = () => {
     let ctx = gsap.context(() => {
       let tlLine = gsap.timeline();
       tlLine.fromTo(
-        ".gsapFadeUp",
-        { opacity: 0, y: 20 },
+        "#logo",
+        { autoAlpha: 0, y: 20 },
         {
-          opacity: 1,
+          autoAlpha: 1,
           y: 0,
           stagger: 0.25,
           duration: 0.75,
           delay: 0.25,
           ease: "power1.out", // Apply Power1.easeInOut easing
         },
-        0.25 // start time in tl
+        0 // start time in tl
       );
+      // COMMUNITY ANIMTION 1
+
+      // tlLine.fromTo(
+      //   ".cls-2",
+      //   { autoAlpha: 0, y: 20 },
+      //   {
+      //     autoAlpha: 1,
+      //     y: 0,
+      //     stagger: 0.25,
+      //     duration: 0.75,
+      //     delay: 0.25,
+      //     ease: "power1.out", // Apply Power1.easeInOut easing
+      //   },
+      //   0.75 // start time in tl
+      // );
+      tlLine.fromTo(
+        "#heart",
+        { autoAlpha: 0, scale: 1 },
+        {
+          autoAlpha: 1,
+
+          duration: 0.5,
+          scale: 1.1,
+          transformOrigin: () => "50% 50%",
+
+          ease: "power1.in", // Apply Power1.easeInOut easing
+        },
+        1 // start time in tl
+      );
+      tlLine.to(
+        "#heart",
+        {
+          scale: 1,
+          duration: 0.75,
+          ease: "power1.out",
+          transformOrigin: () => "50% 50%",
+        },
+        1.5
+      );
+
+      tlLine.to(
+        ".cls-1",
+        {
+          strokeDashoffset: 0,
+          duration: 0.75,
+          ease: "power2.out",
+        },
+        1
+      );
+
+      // tlLine.to(
+      //   "#right-line",
+      //   {
+      //     strokeDashoffset: 0,
+      //     duration: 1,
+
+      //     ease: "power1.inOut",
+      //   },
+      //   0.5
+      // );
     }, logoComponent); // <- selector scoping
     return () => ctx.revert();
   }, []);
@@ -54,6 +114,7 @@ const CommunityLogoAnimation = () => {
           />
         </g>
         <path
+          id="heart"
           className="cls-2"
           d="m189.35,134.81l-.48-.33c-.05-.03-.09-.06-.13-.09-.86-.63-1.7-1.29-2.51-1.96-3.59-3-6.61-6.28-8.73-9.5-1.47-2.24-2.22-4.28-2.3-6.25-.04-1.21.18-2.4.66-3.53.64-1.51,1.46-2.64,2.5-3.44,1.21-.94,2.72-1.42,4.48-1.42,2.44,0,4.67,1.41,6.51,4.11,1.83-2.7,4.06-4.11,6.5-4.11,1.77,0,3.28.48,4.49,1.42,1.04.81,1.86,1.94,2.5,3.44.48,1.13.7,2.32.66,3.53-.07,1.97-.82,4.01-2.3,6.25-2.12,3.22-5.14,6.51-8.73,9.5-.8.67-1.65,1.33-2.51,1.96-.04.03-.08.06-.13.09l-.48.33Z"
         />

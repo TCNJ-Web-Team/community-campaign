@@ -1,19 +1,22 @@
 ---
 import Intro from "../components/Intro.astro";
 import ParallaxContainer from "../components/Parallax";
+import Scroll from "../components/Test";
 import "../styles/home.scss";
 import CarouselContainer from "../components/CarouselContainer";
+import VideoComponent from "../components/VideoComponent";
+import CustomVideo from "../components/CustomVideo";
 
 import Layout from "../layouts/Layout.astro";
 ---
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<link
+<!-- <link
   rel="stylesheet"
   href="https://video-react.github.io/assets/video-react.css"
-/>
+/> -->
 <Layout title="For the Love of Community">
   <main>
-    test
     <!-- <ParallaxContainer
       image="https://tcnj.edu/custom/homepage/img/homepage-slides/fall-23/compressed/slide-1.jpg"
       alt="the cat"
@@ -21,6 +24,8 @@ import Layout from "../layouts/Layout.astro";
       client:load
       align="right"
     > -->
+    <CustomVideo client:load/>
+    <Scroll client:load/>
     <Intro
       heading="For the Love of Community"
       body="The College of New Jersey has the opportunity to build a new indoor/outdoor structure – the TCNJ Community Hub – that will serve as a setting for community engagement, music and drama rehearsals, visiting and faculty lecturers, competition presentations, and performances. "
@@ -66,5 +71,6 @@ import Layout from "../layouts/Layout.astro";
       </p>
       <button>Download TCNJ Pavilion Campaign Overview</button>
     </CarouselContainer>
+    <!-- <VideoComponent client:load /> -->
   </main>
 </Layout>
