@@ -42,6 +42,8 @@ const CustomVideo = () => {
           poster="/astro/images/pav-1.jpg"
           controls={falseElement}
           className={`video ${playerState.isPlaying ? "playing" : "stopped"}`}
+          playsInline // Prevent fullscreen on modern browsers
+          webkit-playsinline="true"
         >
           <source
             type="video/mp4"
