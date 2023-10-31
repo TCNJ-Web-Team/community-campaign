@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "../styles/custom-video-player.scss";
 
 import video from "../assets/video.mp4";
+// import captions from "../assets/diamond-1.vtt";
 import useVideoPlayer from "../hooks/useVideoPlayer";
 
 const CustomVideo = () => {
@@ -18,11 +19,21 @@ const CustomVideo = () => {
     <div className="container">
       <div className="video-wrCustomVideoer">
         <video
-          src={video}
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
-        />
+          src={video}
+        >
+          <source type="video/mp4" src={video} />
+
+          <track
+            preload=""
+            kind="captions"
+            label="Video Captions"
+            srcLang="en"
+            src="/astro/diamond-1.vtt"
+          ></track>
+        </video>
         <div className="controls">
           <div className="actions">
             <button onClick={togglePlay}>
