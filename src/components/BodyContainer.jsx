@@ -5,13 +5,13 @@ export default function BodyContainer({ children, idName }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
-  const image2Controls = useAnimation();
+  //   const image2Controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       // console.log("in view");
       mainControls.start("visible");
-      image2Controls.start("visible");
+      //   image2Controls.start("visible");
     }
   }, [isInView]);
 
@@ -43,10 +43,10 @@ export default function BodyContainer({ children, idName }) {
           src="/astro/images/yellow-bg-small.svg"
           alt="yellow background"
           id="yellow-bg"
-          initial={{ opacity: 0, x: 25 }}
+          initial={{ opacity: 0, x: 75 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.75, delay: 1 }}
+          animate={mainControls}
+          transition={{ duration: 0.75, delay: 0.8 }}
         />
         {/* <motion.img
           layout={true}
