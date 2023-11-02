@@ -1,0 +1,71 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-create-block-accordion {
+// 	background-color: #21759b;
+// 	color: #fff;
+// 	padding: 2px;
+// }
+
+.accordion {
+  // border: 1px solid #ccc;
+  // margin-bottom: 10px;
+
+  .accordion-header {
+    // background-color: #f1f1f1;
+    // padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 21px !important;
+    line-height: 35px;
+    margin-bottom: 0;
+    &::after {
+      content: "+";
+      display: inline-block;
+      // width: 10px;
+      // height: 10px;
+      margin-left: 0.5em;
+      // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='96' viewBox='0 0 110 96'%3E%3Cpath id='Polygon_1' data-name='Polygon 1' d='M55,0l55,96H0Z'/%3E%3C/svg%3E");
+      // background-repeat: no-repeat;
+      // background-size: contain;
+    }
+    &.active {
+      &::after {
+        content: "-";
+        // transform: rotate(180deg);
+      }
+    }
+  }
+  // .accordion-content {
+  //   // max-height: 0;
+  //   height: 0;
+  //   overflow: hidden;
+  //   // // transition: max-height 0.3s ease-in-out;
+  //   transition: all 0.3s ease-in-out;
+  //   // // background-color: #fff;
+  //   // padding: 0px;
+  //   // padding-left: 20px;
+  //   opacity: 0;
+  //   &.active {
+  //     height: auto;
+  //     // padding-bottom: 50px;
+  //     opacity: 1;
+  //   }
+  // }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    &.active {
+      max-height: 1000px; /* Adjust this value to suit your content */
+      opacity: 1;
+    }
+  }
+}
