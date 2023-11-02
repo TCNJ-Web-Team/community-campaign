@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
+import heroImage from "../assets/hero.jpg";
 import CommunityLogoAnimation from "./CommunityLogoAnimation";
 // import CommunityLogoAnimation from "./CommunityLogoAnimation";
 interface Props {
@@ -16,10 +16,11 @@ const { heading, body, buttonLink, buttonText } = Astro.props;
 <section class="intro">
   <!-- <CommunityLogoAnimation client:load /> -->
   <Image
-    src="/astro/images/bird-in-public-folder.jpg"
-    alt="A bird."
-    width="50"
-    height="50"
+    src={heroImage}
+    id="hero-image"
+    alt="TCNJ Pavillion"
+    width="1770"
+    height="1050"
   />
 
   <div id="banner">

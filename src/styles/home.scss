@@ -20,7 +20,33 @@ body {
   text-decoration: none;
 }
 .intro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  margin: 0 24px;
+  background-image: url(/astro/images/hero-bg.jpg);
+  background-size: cover;
+  background-size: 100% 857px;
+  background-repeat: no-repeat;
+
+  #hero-image {
+    padding-top: 55px;
+    width: 100%;
+    height: auto;
+    max-width: 1770px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    border-radius: 465px 0px 0px 0px;
+    /* background: url(...); */
+  }
   #banner {
+    position: absolute;
+    top: 646px;
+    // top: calc((646px / 1433px) * 100);
+    // top: 45.0802512212142%;
+    z-index: 100;
     max-width: calc(1130px - 195px * 2);
     height: auto;
     width: 100%;
