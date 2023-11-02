@@ -25,6 +25,7 @@ $raleway: "Raleway", sans-serif;
 }
 body {
   background-color: $off-white;
+  margin: 0;
 }
 main {
 }
@@ -102,7 +103,7 @@ p {
   display: flex;
   justify-content: center;
   overflow: visible;
-  margin: 0 24px;
+  margin: 0 25px;
   // background-image: url(/astro/images/hero-bg.jpg);
   // background-size: cover;
   // background-size: 100% 857px;
@@ -188,6 +189,42 @@ p {
     line-height: 40px;
     text-align: center;
     color: #000;
+  }
+}
+.banner {
+  background-color: $dark-blue;
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 125px 0;
+    color: white;
+    h2 {
+      font-family: $domine;
+      font-weight: 600;
+      font-size: 45px;
+      line-height: 35px;
+      text-align: center;
+      color: $off-white;
+      padding-bottom: 35px;
+    }
+    p {
+      font-family: $domine;
+      font-weight: 400;
+      font-size: 23px;
+      line-height: 40px;
+      text-align: center;
+      color: $off-white;
+      max-width: 1050px;
+    }
+    .button-link {
+      background-color: $off-white;
+      color: $dark-blue;
+      margin: 75px 0;
+    }
   }
 }
 @media screen and (max-width: 1800px) {
