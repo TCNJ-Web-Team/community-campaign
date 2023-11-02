@@ -45,7 +45,6 @@ export default function BodyContainer({ children, idName }) {
           id="yellow-bg"
           initial={{ opacity: 0, x: 95 }}
           whileInView={{ opacity: 1, x: 0 }}
-          animate={image2Controls}
           viewport={{ once: true }}
           transition={{ duration: 0.75, delay: 0.35 }}
         />

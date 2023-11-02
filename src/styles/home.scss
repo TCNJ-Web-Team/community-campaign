@@ -27,8 +27,8 @@ body {
   background-color: $off-white;
   margin: 0;
 }
-main {
-}
+// main {
+// }
 h1,
 h2,
 h3 {
@@ -225,6 +225,22 @@ p {
       color: $dark-blue;
       margin: 75px 0;
     }
+  }
+}
+footer {
+  width: calc(100% - 50px);
+  margin: 0 auto;
+  padding: 100px 0 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-family: $domine;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 35px;
+    text-align: center;
+    color: $dark-blue;
   }
 }
 @media screen and (max-width: 1800px) {
