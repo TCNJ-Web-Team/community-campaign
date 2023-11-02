@@ -25,6 +25,8 @@ $off-white: #fffdf4;
 body {
   background-color: $off-white;
 }
+main {
+}
 h1,
 h2,
 h3 {
@@ -185,5 +187,10 @@ p {
     line-height: 40px;
     text-align: center;
     color: #000;
+  }
+}
+@media screen and (max-width: 1800px) {
+  main {
+    overflow: hidden;
   }
 }
