@@ -1,6 +1,6 @@
 ---
 import Intro from "../components/Intro.astro";
-import ParallaxContainer from "../components/Parallax";
+import BodyContainer from "../components/BodyContainer";
 import Scroll from "../components/Test";
 import "../styles/home.scss";
 import CarouselContainer from "../components/CarouselContainer";
@@ -42,12 +42,11 @@ import Layout from "../layouts/Layout.astro";
       align="right"
       > -->
     <!-- <CustomVideo client:load /> -->
-    <ParallaxContainer client:load>
-      <h2>Impact</h2>
-      <h3>
+    <BodyContainer idName="tcnj-spirit" client:load>
+      <h2>
         The spirit of The College of New Jersey embodies collaboration,
         creativity, accessibility, and inclusion.
-      </h3>
+      </h2>
       <p>
         The building structure will integrate flexibility, sustainability, and
         efficient space utilization with acoustics and performance technologies.
@@ -59,8 +58,7 @@ import Layout from "../layouts/Layout.astro";
         dancers, artists, and linguists to explore their interdisciplinary and
         creative potential.
       </p>
-      <button>See Progress</button>
-    </ParallaxContainer>
+    </BodyContainer>
 
     <CarouselContainer
       carouselImages={[

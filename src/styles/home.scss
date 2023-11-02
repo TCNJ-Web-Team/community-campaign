@@ -12,6 +12,8 @@ h3 {
   line-height: 45px;
   text-align: left;
   color: #000;
+  margin: 0;
+  padding: 0;
 }
 p {
   font-family: Raleway;
@@ -37,6 +39,39 @@ p {
   text-transform: uppercase;
   text-decoration: none;
 }
+.wrapper {
+  max-width: 1130px;
+  width: 100%;
+  margin: 0 auto;
+  &#tcnj-spirit {
+    margin-top: 175px;
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    overflow: visible;
+    padding-bottom: 275px;
+    h2 {
+      max-width: 540px;
+    }
+  }
+  .overlay-container {
+    overflow: visible;
+    width: 545px;
+    position: relative;
+    // max-width: 545px;
+    #shield-image {
+      width: inherit;
+      position: relative;
+      z-index: 2;
+    }
+    #yellow-bg {
+      position: absolute;
+      right: -321px;
+      bottom: -54px;
+      z-index: 1;
+    }
+  }
+}
 .intro {
   position: relative;
   display: flex;
@@ -57,7 +92,8 @@ p {
     padding-right: 50px;
 
     border-radius: 465px 0px 0px 0px;
-    margin-bottom: 328px;
+    // margin-bottom: 328px;
+    margin-bottom: 365px;
     position: relative;
     z-index: 11;
     /* background: url(...); */

@@ -1,18 +1,7 @@
-// import { Parallax } from "react-parallax";
-
-// const ParallaxContainer = ({ image, alt, strength = 100, children, align }) => (
-//   <Parallax bgImage={image} bgImageAlt={alt} strength={strength}>
-//     <div className={align}>{children}</div>
-//   </Parallax>
-// );
-
-// // https://www.npmjs.com/package/react-parallax
-// export default ParallaxContainer;
-
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-export default function ParallaxContainer({ children }) {
+export default function BodyContainer({ children }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
