@@ -1,5 +1,27 @@
 $dark-blue: #293f6f;
 $off-white: #fffdf4;
+
+@keyframes fadeInAndSlide {
+  0% {
+    opacity: 0;
+    margin-left: 25px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    // margin-top: 25px;
+  }
+  100% {
+    // margin-top: 0px;
+    opacity: 1;
+  }
+}
 body {
   background-color: $off-white;
 }
@@ -97,6 +119,7 @@ p {
     position: relative;
     z-index: 11;
     /* background: url(...); */
+    // animation: fadeInAndSlide 1.25s ease forwards;
   }
   #hero-bg {
     position: absolute;
@@ -124,6 +147,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 35px;
+    animation: fadeIn 1.75s ease forwards;
+
     #svg-container {
       max-width: 635px;
       width: 100%;
@@ -135,6 +160,7 @@ p {
       line-height: 40px;
       text-align: center;
       color: #2e2e2e;
+      animation: fadeIn 1s ease forwards;
     }
   }
 }
