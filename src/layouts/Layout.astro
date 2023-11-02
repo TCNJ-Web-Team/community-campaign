@@ -16,8 +16,13 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preload" href="/astro/images/hero.jpg" as="image" />
+    <link rel="preload" href="/astro/images/hero-bg.jpg" as="image" />
 
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
 
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />

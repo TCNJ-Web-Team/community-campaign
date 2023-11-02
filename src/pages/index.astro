@@ -9,6 +9,11 @@ import CustomVideo from "../components/CustomVideo";
 
 import Layout from "../layouts/Layout.astro";
 import GiveBanner from "../components/GiveBanner";
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/raleway/400.css";
+import "@fontsource/raleway/500.css";
+import "@fontsource/raleway/600.css";
 ---
 
 <link
@@ -78,7 +83,24 @@ import GiveBanner from "../components/GiveBanner";
         <a class="button-link"> Download TCNJ Pavilion Campaign Overview</a>
       </div>
     </CarouselContainer>
-    <GiveBanner />
+    <GiveBanner client:load>
+      <h2>Giving Opportunities</h2>
+      <p>
+        Please join the TCNJ community in support of this important new project.
+        Whether through an individual gift or sponsorship, there are numerous
+        ways to be involved with the creation of the TCNJ Pavilion.
+      </p>
+
+      <p>
+        Naming opportunities will underwrite various aspects of programming
+        provided through the TCNJ Pavilion, including but not limited to support
+        for the naming of the space/facility; recurring programs and
+        initiatives; student organizations’ use of the space; lecture series and
+        scholarly panels; and visiting artists and scholar-in-residence
+        fellowships.
+      </p>
+      <a class="button-link">Give Online</a>
+    </GiveBanner>
     <!-- <VideoComponent client:load /> -->
   </main>
 </Layout>
