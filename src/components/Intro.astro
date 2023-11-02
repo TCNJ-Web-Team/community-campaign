@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
+// import heroImage from "../assets/hero.jpg";
 import CommunityLogoAnimation from "./CommunityLogoAnimation";
 // import CommunityLogoAnimation from "./CommunityLogoAnimation";
 interface Props {
-  heading: string;
+  heading?: string;
   body?: string;
   buttonText?: string;
   buttonLink?: string;
@@ -13,8 +15,19 @@ const { heading, body, buttonLink, buttonText } = Astro.props;
 
 <section class="intro">
   <!-- <CommunityLogoAnimation client:load /> -->
-  <CommunityLogoAnimation client:load />
-  <h2>{heading}</h2>
-  <p>{body}</p>
-  {buttonText && <a href={buttonLink}>{buttonText}</a>}
+  <img src="/astro/images/hero-bg.jpg" id="hero-bg" alt="Background yellow" />
+  <img src="/astro/images/hero.jpg" id="hero-image" alt="TCNJ Pavillion" />
+
+  <div id="banner">
+    <CommunityLogoAnimation client:load />
+    <!-- <h2>{heading}</h2> -->
+    <p>{body}</p>
+    {
+      buttonText && (
+        <a class="button-link" href={buttonLink}>
+          {buttonText}
+        </a>
+      )
+    }
+  </div>
 </section>
