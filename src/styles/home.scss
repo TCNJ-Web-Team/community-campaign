@@ -1,6 +1,7 @@
 $dark-blue: #293f6f;
 $off-white: #fffdf4;
-
+$domine: "Domine", sans-serif;
+$raleway: "Raleway", sans-serif;
 @keyframes fadeInAndSlide {
   0% {
     opacity: 0;
@@ -30,7 +31,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: Domine;
+  font-family: $domine;
   font-weight: 600;
   font-size: 35px;
   line-height: 45px;
@@ -40,16 +41,16 @@ h3 {
   padding: 0;
 }
 p {
-  font-family: Raleway;
-  font-weight: normal;
+  font-family: $raleway;
+  font-weight: 400;
   font-size: 19px;
   line-height: 40px;
   text-align: left;
   color: #000;
 }
 .button-link {
-  font-family: Raleway;
-  font-weight: bold;
+  font-family: $raleway;
+  font-weight: 600;
   font-size: 20px;
   line-height: 30px;
   text-align: center;
@@ -156,7 +157,7 @@ p {
       width: 100%;
     }
     p {
-      font-family: Domine;
+      font-family: $domine;
       font-weight: normal;
       font-size: 25px;
       line-height: 40px;
@@ -181,7 +182,7 @@ p {
     padding: 15px 100px 30px;
   }
   p {
-    font-family: Domine;
+    font-family: $domine;
     font-weight: normal;
     font-size: 23px;
     line-height: 40px;
