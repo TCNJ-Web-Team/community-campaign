@@ -1,5 +1,6 @@
 $dark-blue: #293f6f;
 $off-white: #fffdf4;
+$domine: "Domine 400", sans-serif;
 
 @keyframes fadeInAndSlide {
   0% {
@@ -30,7 +31,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: Domine;
+  font-family: $domine;
   font-weight: 600;
   font-size: 35px;
   line-height: 45px;
@@ -156,8 +157,8 @@ p {
       width: 100%;
     }
     p {
-      font-family: Domine;
-      font-weight: normal;
+      font-family: $domine;
+      font-weight: 400;
       font-size: 25px;
       line-height: 40px;
       text-align: center;
@@ -181,8 +182,8 @@ p {
     padding: 15px 100px 30px;
   }
   p {
-    font-family: Domine;
-    font-weight: normal;
+    font-family: $domine;
+    font-weight: 400;
     font-size: 23px;
     line-height: 40px;
     text-align: center;
