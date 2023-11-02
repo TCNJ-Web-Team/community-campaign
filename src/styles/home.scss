@@ -3,6 +3,24 @@ $off-white: #fffdf4;
 body {
   background-color: $off-white;
 }
+h1,
+h2,
+h3 {
+  font-family: Domine;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 45px;
+  text-align: left;
+  color: #000;
+}
+p {
+  font-family: Raleway;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 40px;
+  text-align: left;
+  color: #000;
+}
 .button-link {
   font-family: Raleway;
   font-weight: bold;
@@ -25,10 +43,10 @@ body {
   justify-content: center;
   overflow: visible;
   margin: 0 24px;
-  background-image: url(/astro/images/hero-bg.jpg);
-  background-size: cover;
-  background-size: 100% 857px;
-  background-repeat: no-repeat;
+  // background-image: url(/astro/images/hero-bg.jpg);
+  // background-size: cover;
+  // background-size: 100% 857px;
+  // background-repeat: no-repeat;
 
   #hero-image {
     padding-top: 55px;
@@ -39,7 +57,17 @@ body {
     padding-right: 50px;
 
     border-radius: 465px 0px 0px 0px;
+    margin-bottom: 328px;
+    position: relative;
+    z-index: 11;
     /* background: url(...); */
+  }
+  #hero-bg {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 860px;
+    object-fit: cover;
   }
   #banner {
     position: absolute;
