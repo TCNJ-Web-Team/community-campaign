@@ -5,13 +5,15 @@ export default function BodyContainer({ children, idName }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
+  const image1Controls = useAnimation();
   const image2Controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       // console.log("in view");
       mainControls.start("visible");
-      image2Controls.start("visible");
+      image1Controls.start("visibleShield");
+      image2Controls.start("visibleYellow");
     }
   }, [isInView]);
 
@@ -24,7 +26,7 @@ export default function BodyContainer({ children, idName }) {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 1, delay: 0.35 }}
+        transition={{ duration: 1, delay: 0.3 }}
         className="text-container"
       >
         {children}
@@ -34,19 +36,34 @@ export default function BodyContainer({ children, idName }) {
           src="/astro/images/walkthrough.png"
           alt="Pavillion Rendering Walkthrough"
           id="shield-image"
-          initial={{ opacity: 0, x: -25 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0, x: -25 }}
+          // whileInView={{ opacity: 1, x: 0 }}
+          // viewport={{ once: true }}
+          // transition={{ duration: 0.75, delay: 0.9 }}
+          variants={{
+            hidden: { opacity: 0, x: -25 },
+            visibleShield: { opacity: 1, x: 0 },
+          }}
+          initial="hidden"
+          animate={image1Controls}
           transition={{ duration: 0.75, delay: 0.9 }}
         />
         <motion.img
-          src="/astro/images/yellow-bg-small.svg"
+          src="/astro/images/yellow-bg-small.jpg"
           alt="yellow background"
           id="yellow-bg"
-          initial={{ opacity: 0, x: 95 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.75, delay: 0.35 }}
+          // initial={{ opacity: 0, x: 95 }}
+          // whileInView={{ opacity: 1, x: 0 }}
+          // viewport={{ once: true }}
+          // transition={{ duration: 0.75, delay: 0.35 }}
+
+          variants={{
+            hidden: { opacity: 0, x: 95 },
+            visibleYellow: { opacity: 1, x: 0 },
+          }}
+          initial="hidden"
+          animate={image2Controls}
+          transition={{ duration: 0.75, delay: 0.6 }}
         />
         {/* <motion.img
           layout={true}
