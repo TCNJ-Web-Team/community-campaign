@@ -1,3 +1,10 @@
 export default function Footer({ children }) {
-  return <footer id="footer">{children}</footer>;
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer id="footer">
+      {children}
+      <span>Copyright ©{currentYear}</span>
+    </footer>
+  );
 }
