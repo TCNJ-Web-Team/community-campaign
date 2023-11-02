@@ -1,36 +1,29 @@
-import { useBlockProps, InnerBlocks, RichText } from "@wordpress/block-editor";
+import { useState } from "react";
+import "../styles/accordion-styles.scss";
 
-export default function save({
-  attributes: { open, startOpen, accordionHeading, bgGrey },
-  setAttributes,
-}) {
-  const blockProps = useBlockProps.save({
-    className: `accordion ${bgGrey && "grey"}`,
-  });
-  const onAccordionClick = (event) => {
+export default function Accodion({ children, header, idName }) {
+  const [open, setOpen] = useState(false);
+
+  const onAccordionClick = () => {
     // console.log(event);
+    setOpen(!open);
   };
   return (
-    <div {...blockProps}>
-      <RichText.Content
-        value={accordionHeading}
+    <div className="accordion" id={idName}>
+      <h2
         className={`${
-          startOpen
-            ? "accordion-header start-open active test"
-            : "accordion-header"
+          open ? "accordion-header start-open active test" : "accordion-header"
         }`}
-        tagName="h2"
-
-        // asdasdasd
-      />
+        onClick={onAccordionClick}
+      >
+        {header}
+      </h2>
       <div
         className={`${
-          startOpen
-            ? "accordion-content start-open active"
-            : "accordion-content"
+          open ? "accordion-content start-open active" : "accordion-content"
         }`}
       >
-        <InnerBlocks.Content />
+        {children}
       </div>
     </div>
   );

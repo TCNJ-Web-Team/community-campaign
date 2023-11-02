@@ -37,7 +37,7 @@ export default function BodyContainer({ children, idName }) {
           initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.75, delay: 0.6 }}
+          transition={{ duration: 0.75, delay: 0.9 }}
         />
         <motion.img
           src="/astro/images/yellow-bg-small.svg"
@@ -47,7 +47,7 @@ export default function BodyContainer({ children, idName }) {
           whileInView={{ opacity: 1, x: 0 }}
           animate={image2Controls}
           viewport={{ once: true }}
-          transition={{ duration: 0.75, delay: 0.8 }}
+          transition={{ duration: 0.75, delay: 0.35 }}
         />
         {/* <motion.img
           layout={true}
