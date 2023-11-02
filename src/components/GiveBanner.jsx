@@ -8,9 +8,10 @@ const GiveBanner = ({ children }) => {
         className="wrapper"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.25 }}
+        transition={{ duration: 0.65, delay: 0.25 }}
       >
         {children}
+        <h4>View the full list of naming opportunities +</h4>
       </motion.div>
     </div>
   );
