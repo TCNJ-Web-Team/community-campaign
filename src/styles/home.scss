@@ -25,6 +25,8 @@ $off-white: #fffdf4;
 body {
   background-color: $off-white;
 }
+main {
+}
 h1,
 h2,
 h3 {
@@ -54,7 +56,7 @@ p {
   color: #fff;
   display: flex;
   padding: 25px 45px;
-  max-width: calc(340px - 90px);
+  max-width: calc(450px - 90px);
   width: 100%;
   background-color: $dark-blue;
   justify-content: center;
@@ -162,5 +164,33 @@ p {
       color: #2e2e2e;
       animation: fadeIn 1s ease forwards;
     }
+  }
+}
+
+#carousel {
+  padding-bottom: 200px;
+  .swiper-slide {
+    .container {
+      width: 100%;
+    }
+  }
+  #carousel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 100px 30px;
+  }
+  p {
+    font-family: Domine;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 40px;
+    text-align: center;
+    color: #000;
+  }
+}
+@media screen and (max-width: 1800px) {
+  main {
+    overflow: hidden;
   }
 }
