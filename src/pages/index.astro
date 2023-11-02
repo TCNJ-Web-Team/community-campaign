@@ -9,7 +9,11 @@ import CustomVideo from "../components/CustomVideo";
 
 import Layout from "../layouts/Layout.astro";
 ---
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
 
 <!-- <link
   rel="stylesheet"
@@ -26,10 +30,9 @@ import Layout from "../layouts/Layout.astro";
     > -->
     <!-- <Scroll client:load/> -->
     <Intro
-    heading="For the Love of Community"
-    body="The College of New Jersey has the opportunity to build a new indoor/outdoor structure – the TCNJ Community Hub – that will serve as a setting for community engagement, music and drama rehearsals, visiting and faculty lecturers, competition presentations, and performances. "
-    buttonText="Invest in Community"
-    buttonLink="https://tcnj.edu"
+      body="Through the building of the TCNJ Pavilion, the TCNJ community will join together for musical and dramatic performances, lectures and debates, and ceremonies and presentations that spark interdisciplinary connections among learners, researchers, innovators, students, and community members."
+      buttonText="Invest in Community"
+      buttonLink="#"
     />
     <!-- <ParallaxContainer
       image="https://tcnj.edu/custom/homepage/img/homepage-slides/fall-23/compressed/slide-1.jpg"
@@ -38,27 +41,27 @@ import Layout from "../layouts/Layout.astro";
       client:load
       align="right"
       > -->
-      <CustomVideo client:load/>
-      <ParallaxContainer client:load>
-         <h2>Impact</h2>
-    <h3>
-      The spirit of The College of New Jersey embodies collaboration,
-      creativity, accessibility, and inclusion.
-    </h3>
-    <p>
-      The building structure will integrate flexibility, sustainability, and
-      efficient space utilization with acoustics and performance technologies.
-      Integral to the flexible functionality of the building is a retractable
-      door that opens to a covered, multi-purpose outdoor seating area. The
-      Pavilion will function year-round in a central location on campus. This
-      innovative public space will provide an ideal location for next-level
-      partnerships: Think science and business researchers joined by scholars,
-      dancers, artists, and linguists to explore their interdisciplinary and
-      creative potential.
-    </p>
-    <button>See Progress</button>
-      </ParallaxContainer>
-   
+    <CustomVideo client:load />
+    <ParallaxContainer client:load>
+      <h2>Impact</h2>
+      <h3>
+        The spirit of The College of New Jersey embodies collaboration,
+        creativity, accessibility, and inclusion.
+      </h3>
+      <p>
+        The building structure will integrate flexibility, sustainability, and
+        efficient space utilization with acoustics and performance technologies.
+        Integral to the flexible functionality of the building is a retractable
+        door that opens to a covered, multi-purpose outdoor seating area. The
+        Pavilion will function year-round in a central location on campus. This
+        innovative public space will provide an ideal location for next-level
+        partnerships: Think science and business researchers joined by scholars,
+        dancers, artists, and linguists to explore their interdisciplinary and
+        creative potential.
+      </p>
+      <button>See Progress</button>
+    </ParallaxContainer>
+
     <CarouselContainer
       carouselImages={[
         { image: "/astro/images/pav-1.jpg", alt: "Pavilion Rendering 1" },

@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
+
 import CommunityLogoAnimation from "./CommunityLogoAnimation";
 // import CommunityLogoAnimation from "./CommunityLogoAnimation";
 interface Props {
-  heading: string;
+  heading?: string;
   body?: string;
   buttonText?: string;
   buttonLink?: string;
@@ -13,8 +15,23 @@ const { heading, body, buttonLink, buttonText } = Astro.props;
 
 <section class="intro">
   <!-- <CommunityLogoAnimation client:load /> -->
-  <CommunityLogoAnimation client:load />
-  <h2>{heading}</h2>
-  <p>{body}</p>
-  {buttonText && <a href={buttonLink}>{buttonText}</a>}
+  <Image
+    src="/astro/images/bird-in-public-folder.jpg"
+    alt="A bird."
+    width="50"
+    height="50"
+  />
+
+  <div id="banner">
+    <CommunityLogoAnimation client:load />
+    <!-- <h2>{heading}</h2> -->
+    <p>{body}</p>
+    {
+      buttonText && (
+        <a class="button-link" href={buttonLink}>
+          {buttonText}
+        </a>
+      )
+    }
+  </div>
 </section>
