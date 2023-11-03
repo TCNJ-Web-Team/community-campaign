@@ -267,6 +267,23 @@ header {
     }
   }
 }
+#naming-opps {
+  h2 {
+    font-family: $raleway;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 55px;
+    text-align: center;
+    color: $off-white;
+    text-transform: uppercase;
+    span {
+      text-decoration: underline;
+    }
+    &:after {
+      text-decoration: none;
+    }
+  }
+}
 footer {
   width: calc(100% - 50px);
   margin: 0 auto;
@@ -274,6 +291,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  img {
+    max-width: 440px;
+    width: 80%;
+  }
   p {
     font-family: $domine;
     font-weight: 600;
@@ -292,6 +313,7 @@ footer {
     border: none;
   }
   span {
+    margin-top: -40px;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -475,7 +497,7 @@ footer {
         max-width: none;
       }
       .text-container {
-        padding: 0 50px;
+        padding: 25px 50px 0;
       }
     }
     &#tcnj-spirit,
@@ -522,10 +544,26 @@ footer {
 @media screen and (max-width: 850px) {
   .wrapper {
     width: calc(100% - 100px);
+    &#tcnj-spirit,
+    &#carousel {
+      padding-left: 25px;
+      padding-right: 25px;
+      width: calc(100% - 50px);
+    }
   }
-  #carousel #carousel-body {
+  #opportunties {
+    width: 100%;
+  }
+  #carousel #carousel-body,
+  #opportunties {
     padding: 15px 0px 30px;
     p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
+    }
+  }
+  #naming-opps {
+    h2 {
       font-size: clamp(16px, 2.5vw, 22px);
       line-height: 35px;
     }
@@ -564,5 +602,9 @@ footer {
     #banner {
       width: calc(100% - 50px);
     }
+  }
+  .wrapper#tcnj-spirit .text-container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

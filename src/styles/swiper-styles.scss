@@ -30,7 +30,7 @@
 .bottomSwiper {
   height: 20%;
   box-sizing: border-box;
-  // padding: 35px 0 0;
+  padding: 35px 0 0;
   .swiper-slide {
     width: 25%;
     height: 100%;
@@ -38,5 +38,11 @@
   }
   .swiper-slide-thumb-active {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .bottomSwiper {
+    padding: 20px 0 0 0;
   }
 }

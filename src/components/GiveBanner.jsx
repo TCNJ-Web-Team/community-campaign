@@ -4,7 +4,7 @@ import Accodion from "./Accordion";
 
 const GiveBanner = ({ children }) => {
   return (
-    <div className="banner">
+    <div id="opportunties" className="banner">
       <motion.div
         className="wrapper"
         initial={{ opacity: 0, y: 25 }}

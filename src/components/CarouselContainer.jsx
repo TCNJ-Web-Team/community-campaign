@@ -21,7 +21,6 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import CustomVideo from "./CustomVideo";
-import { s } from "../../dist/_astro/motion.28893b4b";
 
 const CarouselContainer = ({ carouselImages, children }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -44,7 +43,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 1050) {
-        setSpaceBetween(10); // Adjust as needed for smaller screens
+        setSpaceBetween(20); // Adjust as needed for smaller screens
       } else if (window.innerWidth <= 600) {
         setSpaceBetween(10); // Adjust as needed for very small screens
       } else {
@@ -105,7 +104,6 @@ const CarouselContainer = ({ carouselImages, children }) => {
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="bottomSwiper"
-        style={{ paddingTop: `${spaceBetween}px` }}
       >
         <SwiperSlide>
           <img src="/astro/images/pav-1.jpg" alt="Pavilion Rendering 1" />
