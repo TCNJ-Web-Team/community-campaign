@@ -7,6 +7,7 @@ const GiveBanner = ({ children }) => {
     <div className="banner">
       <motion.div
         className="wrapper"
+        id="opportunties"
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, delay: 0.25 }}

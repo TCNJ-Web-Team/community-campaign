@@ -16,7 +16,7 @@ export default function Accodion({ children, header, idName }) {
         }`}
         onClick={onAccordionClick}
       >
-        {header}
+        <span>{header}</span>
       </h2>
       <div
         className={`${

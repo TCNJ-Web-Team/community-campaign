@@ -267,6 +267,23 @@ header {
     }
   }
 }
+#naming-opps {
+  h2 {
+    font-family: $raleway;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 55px;
+    text-align: center;
+    color: $off-white;
+    text-transform: uppercase;
+    span {
+      text-decoration: underline;
+    }
+    &:after {
+      text-decoration: none;
+    }
+  }
+}
 footer {
   width: calc(100% - 50px);
   margin: 0 auto;
@@ -274,6 +291,10 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  img {
+    max-width: 440px;
+    width: 80%;
+  }
   p {
     font-family: $domine;
     font-weight: 600;
@@ -292,6 +313,7 @@ footer {
     border: none;
   }
   span {
+    margin-top: -40px;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -443,11 +465,61 @@ footer {
   }
 }
 @media screen and (max-width: 1050px) {
+  .intro {
+    position: relative;
+
+    flex-direction: column;
+    align-items: center;
+    #hero-bg {
+      position: absolute;
+      top: 0;
+    }
+    #hero-image {
+      position: absolute;
+      top: 0;
+    }
+    #banner {
+      position: relative;
+      margin-top: 31.5vw;
+      top: 0;
+      #inner-banner {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
   .wrapper {
     &#tcnj-spirit {
       flex-direction: column-reverse;
+      margin-top: 150px;
+      margin-bottom: 0px;
+      padding-bottom: 100px;
       h2 {
         max-width: none;
+      }
+      .text-container {
+        padding: 25px 50px 0;
+      }
+    }
+    &#tcnj-spirit,
+    &#carousel {
+      width: calc(100% - 100px);
+    }
+    &#carousel {
+      padding-top: 150px;
+    }
+    &#tcnj-spirit {
+      // width: 100%;
+      background-image: url("/astro/images/yellow-bg-small.jpg");
+      background-size: cover;
+      padding-left: 50px;
+      padding-right: 50px;
+      background-repeat: no-repeat;
+      // background-position-y: bottom;
+      background-position-x: 0;
+      background-position-y: 22vw;
+      .overlay-container #yellow-bg {
+        display: none !important;
+        opacity: 0 !important;
       }
     }
     // width: calc(100% - 200px);
@@ -466,6 +538,40 @@ footer {
     .text-container {
       position: relative;
       z-index: 100;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .wrapper {
+    width: calc(100% - 100px);
+    &#tcnj-spirit,
+    &#carousel {
+      padding-left: 25px;
+      padding-right: 25px;
+      width: calc(100% - 50px);
+    }
+  }
+  .banner {
+    width: 100%;
+  }
+  #opportunties {
+    width: calc(100% - 100px);
+    p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
+    }
+  }
+  #carousel #carousel-body {
+    padding: 15px 0px 30px;
+    p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
+    }
+  }
+  #naming-opps {
+    h2 {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
     }
   }
 }
@@ -490,6 +596,9 @@ footer {
   .button-link {
     width: auto;
   }
+  .wrapper .overlay-container #shield-image {
+    border-radius: 0 0 150px 0;
+  }
 }
 @media screen and (max-width: 650px) {
   #tcnj-logo {
@@ -498,6 +607,86 @@ footer {
   .intro {
     #banner {
       width: calc(100% - 50px);
+      margin-top: 48.5vw;
+    }
+  }
+
+  .wrapper {
+    &#tcnj-spirit {
+      margin-top: 75px;
+      padding-bottom: 75px;
+      h2 {
+        font-size: 28px;
+        line-height: 40px;
+      }
+      .text-container {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+      .overlay-container #shield-image {
+        border-radius: 0 0 75px 0;
+      }
+    }
+    &#carousel {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    &#opportunties {
+      width: calc(100% - 50px);
+
+      padding-top: 75px;
+      padding-bottom: 75px;
+      .button-link {
+        margin: 25px 0 25px 0;
+      }
+      h2 {
+        font-size: 36px;
+        line-height: 45px;
+      }
+    }
+  }
+  // .wrapper {
+  //   padding-top: 75px !important;
+  //   padding-bottom: 75px !important;
+  // }
+  header {
+    a {
+      font-size: 16px;
+    }
+  }
+  footer {
+    width: calc(100% - 25px);
+    padding: 75px 0;
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    hr {
+      margin: 50px 0 35px;
+    }
+  }
+  .intro #banner p,
+  #carousel #carousel-body p,
+  #opportunties p {
+    font-size: 18px;
+  }
+  .intro #banner #inner-banner {
+    gap: 20px;
+    padding: 7vw 5vw;
+  }
+  header {
+    width: calc(100% - 35px);
+    padding: 0;
+    a {
+      font-style: 14px;
+      &:after {
+        height: 15px;
+      }
     }
   }
 }

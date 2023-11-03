@@ -18,6 +18,7 @@ export default function BodyContainer({ children, idName }) {
   const [source, setSource] = useState(
     imageSources[imageSources.length - 1].src
   );
+  const [isWindowBelow1050, setIsWindowBelow1050] = useState(false);
 
   useEffect(() => {
     const updateSource = () => {
@@ -30,13 +31,22 @@ export default function BodyContainer({ children, idName }) {
       setSource(imageSources[imageSources.length - 1].src);
     };
 
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      windowWidth <= 1050
+        ? setIsWindowBelow1050(true)
+        : setIsWindowBelow1050(false);
+      // setIsWindowBelow1050(windowWidth <= 1050);
+      updateSource();
+    };
+
     // Make the initial source selection and listen for window resize events
     updateSource();
-    window.addEventListener("resize", updateSource);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener("resize", updateSource);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -76,18 +86,20 @@ export default function BodyContainer({ children, idName }) {
           animate={image1Controls}
           transition={{ duration: 0.75, delay: 0.9 }}
         />
-        <motion.img
-          src="/astro/images/yellow-bg-small.jpg"
-          alt="yellow background"
-          id="yellow-bg"
-          variants={{
-            hidden: { opacity: 0, x: 95 },
-            visibleYellow: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          animate={image2Controls}
-          transition={{ duration: 0.75, delay: 0.6 }}
-        />
+        {!isWindowBelow1050 && (
+          <motion.img
+            src="/astro/images/yellow-bg-small.jpg"
+            alt="yellow background"
+            id="yellow-bg"
+            variants={{
+              hidden: { opacity: 0, x: 95 },
+              visibleYellow: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            animate={image2Controls}
+            transition={{ duration: 0.75, delay: 0.6 }}
+          />
+        )}
       </div>
     </div>
   );
