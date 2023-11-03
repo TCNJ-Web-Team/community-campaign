@@ -523,6 +523,13 @@ footer {
   .wrapper {
     width: calc(100% - 100px);
   }
+  #carousel #carousel-body {
+    padding: 15px 0px 30px;
+    p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
+    }
+  }
 }
 @media screen and (max-width: 800px) {
   #logo {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,9 +21,12 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import CustomVideo from "./CustomVideo";
+import { s } from "../../dist/_astro/motion.28893b4b";
 
 const CarouselContainer = ({ carouselImages, children }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [spaceBetween, setSpaceBetween] = useState(40);
+
   // console.log(carouselImages);
   const stopVideos = () => {
     // console.log("Swipe");
@@ -38,6 +41,24 @@ const CarouselContainer = ({ carouselImages, children }) => {
       }
     });
   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 1050) {
+        setSpaceBetween(10); // Adjust as needed for smaller screens
+      } else if (window.innerWidth <= 600) {
+        setSpaceBetween(10); // Adjust as needed for very small screens
+      } else {
+        setSpaceBetween(40); // Default value
+      }
+    };
+
+    handleResize(); // Call it initially
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     // <Swiper
@@ -57,7 +78,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
-        // spaceBetween={40}
+        spaceBetween={spaceBetween}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
@@ -78,12 +99,13 @@ const CarouselContainer = ({ carouselImages, children }) => {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        // spaceBetween={40}
+        spaceBetween={spaceBetween}
         slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="bottomSwiper"
+        style={{ paddingTop: `${spaceBetween}px` }}
       >
         <SwiperSlide>
           <img src="/astro/images/pav-1.jpg" alt="Pavilion Rendering 1" />
