@@ -607,8 +607,10 @@ footer {
   .intro {
     #banner {
       width: calc(100% - 50px);
+      margin-top: 48.5vw;
     }
   }
+
   .wrapper {
     &#tcnj-spirit {
       margin-top: 75px;
@@ -621,10 +623,7 @@ footer {
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;
-        h2,
-        p {
-          text-align: center;
-        }
+
         p {
           margin-bottom: 0;
         }
@@ -638,11 +637,16 @@ footer {
       padding-bottom: 75px;
     }
     &#opportunties {
+      width: calc(100% - 50px);
+
       padding-top: 75px;
       padding-bottom: 75px;
+      .button-link {
+        margin: 25px 0 25px 0;
+      }
       h2 {
-        font-size: 28px;
-        line-height: 40px;
+        font-size: 36px;
+        line-height: 45px;
       }
     }
   }
@@ -656,7 +660,12 @@ footer {
     }
   }
   footer {
+    width: calc(100% - 25px);
     padding: 75px 0;
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
     hr {
       margin: 50px 0 35px;
     }
