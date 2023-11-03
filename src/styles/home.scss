@@ -173,21 +173,23 @@ header {
     // top: calc((646px / 1433px) * 100);
     // top: 45.0802512212142%;
     z-index: 100;
-    max-width: calc(1130px - 195px * 2);
+    // max-width: calc(1130px - 195px * 2);
+    max-width: 1130px;
     height: auto;
     width: 100%;
     margin: 0 auto;
     // height: 787px;
     background: linear-gradient(rgba(255, 253, 244, 0.92) 0%, #fffdf4 100%);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 75px 195px;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
     animation: fadeIn 1.75s ease forwards;
-
+    #inner-banner {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      padding: 75px 195px;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+    }
     #svg-container {
       max-width: 635px;
       width: 100%;
@@ -307,7 +309,180 @@ footer {
 
     #hero-image {
       width: calc(100% - 100px);
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 17.5vw;
+      // margin-bottom: 34.5vw;
+    }
+    #hero-bg {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height: auto;
+      object-fit: inherit;
+    }
+    #banner {
+      top: 33.5vw; /* Adjust the scaling factor as needed */
+    }
+  }
+}
+@media screen and (max-width: 1800px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 24.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 32.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 42.5vw;
+    }
+    #banner {
+      // padding: 0;
+      width: calc(100% - 200px);
+      // padding-left: 10%;
+      // padding-right: 10%;
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  #logo {
+    width: 90%;
+  }
+  #tcnj-logo {
+    height: 45px;
+  }
+  .intro {
+    #banner {
+      // padding: 0;
+      // width: fit-content;
+      // padding-left: 5%;
+      // padding-right: 5%;
+      p {
+        font-size: 22px;
+      }
+      #inner-banner {
+        padding: 5vw 10vw;
+      }
+    }
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 42.5vw;
+    }
+  }
+  .wrapper {
+    width: calc(100% - 200px);
+    .overlay-container {
+      overflow: visible;
+      width: 465px;
+      #yellow-bg {
+        width: 650px;
+        top: 150px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  #logo {
+    width: 70%;
+  }
+  .intro {
+    #banner {
+      width: calc(100% - 150px);
+
+      // padding-top: 50px;
+      // padding-bottom: 50px;
+      // width: 58%;
+      // padding-left: 10%;
+      // padding-right: 10%;
+      p {
+        font-size: clamp(16px, 2.5vw, 22px);
+        line-height: 35px;
+      }
+      #inner-banner {
+        gap: 20px;
+        padding: 10vw 10vw;
+      }
+    }
+    #hero-image {
+      width: calc(100% - 50px);
+    }
+  }
+  .wrapper {
+    // width: calc(100% - 200px);
+    .overlay-container {
+      width: 365px;
+      padding-top: 100px;
+      #yellow-bg {
+        width: 550px;
+        top: 200px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    &#tcnj-spirit {
+      flex-direction: column-reverse;
+      h2 {
+        max-width: none;
+      }
+    }
+    // width: calc(100% - 200px);
+    .overlay-container {
+      width: 80%;
+      padding-top: 0px;
+      #yellow-bg {
+        width: 1150px;
+        top: 300px;
+      }
+    }
+    .text-container {
+      position: relative;
+      z-index: 100;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  #logo {
+    width: 80%;
+  }
+  header {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+  }
+  .intro {
+    margin: 0;
+    #banner {
+      width: calc(100% - 100px);
+    }
+    #hero-image {
+      padding-top: 25px;
+      width: calc(100% - 25px);
+    }
+  }
+  .button-link {
+    width: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  #tcnj-logo {
+    height: 35px;
+  }
+  .intro {
+    #banner {
+      width: calc(100% - 50px);
     }
   }
 }
