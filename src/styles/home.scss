@@ -53,10 +53,11 @@ header {
   display: flex;
   flex-direction: row;
   padding: 0 25px;
-  width: calc(100% - 50px);
+  width: calc(100% - 100px);
   justify-content: space-between;
   align-items: center;
   height: 115px;
+  margin: 0 auto;
   a {
     font-family: $raleway;
     font-weight: 600;
@@ -151,7 +152,7 @@ header {
     padding-left: 50px;
     padding-right: 50px;
 
-    border-radius: 465px 0px 0px 0px;
+    // border-radius: 465px 0px 0px 0px;
     // margin-bottom: 328px;
     margin-bottom: 365px;
     position: relative;
@@ -294,8 +295,19 @@ footer {
     color: $dark-blue;
   }
 }
-@media screen and (max-width: 1800px) {
+@media screen and (max-width: 2000px) {
   main {
     overflow: hidden;
+  }
+  .intro {
+    // background-image: url(/astro/images/hero-bg.jpg);
+    // background-size: cover;
+    // background-size: 100% 857px;
+    // background-repeat: no-repeat;
+
+    #hero-image {
+      width: calc(100% - 100px);
+      margin: 0 auto;
+    }
   }
 }

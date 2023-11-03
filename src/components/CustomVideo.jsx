@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "../styles/custom-video-player.scss";
 
 // import video from "../assets/video.mp4";
@@ -7,9 +7,25 @@ import useVideoPlayer from "../hooks/useVideoPlayer";
 
 const CustomVideo = () => {
   const [showCaptions, setShowCaptions] = useState(false); // Add state variable
+  const [isHovered, setIsHovered] = useState(true);
+  const [hasSubs, setHasSubs] = useState(true); // State to track subtitles
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
 
   const videoElement = useRef(null);
-  const trueElement = true;
+  // useEffect(() => {
+  //   // Use useEffect to check if the video has subtitles on mount
+  //   if (videoElement.current) {
+  //     const videoTracks = videoElement.current.textTracks;
+  //     const hasCaptions = Array.from(videoTracks).some(
+  //       (track) => track.kind === "captions" && track.mode === "showing"
+  //     );
+  //     setHasSubs(hasCaptions);
+  //   }
+  // }, []);
+
   const falseElement = false;
   // Function to toggle the captions
   const toggleCaptions = () => {
@@ -39,11 +55,13 @@ const CustomVideo = () => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
-          poster="/astro/images/pav-1.jpg"
+          poster="/astro/images/video-screen.jpg"
           controls={falseElement}
           className={`video ${playerState.isPlaying ? "playing" : "stopped"}`}
           playsInline // Prevent fullscreen on modern browsers
           webkit-playsinline="true"
+          onMouseOver={handleMouseOver}
+          onMouseOut={() => setIsHovered(null)}
         >
           <source
             type="video/mp4"
@@ -58,51 +76,47 @@ const CustomVideo = () => {
             src="/astro/diamond-1.vtt"
           ></track>
         </video>
-        <div className="controls">
-          <div className="actions">
-            <button onClick={togglePlay}>
-              {!playerState.isPlaying ? (
-                <i className="bx bx-play"></i>
-              ) : (
-                <i className="bx bx-pause"></i>
-              )}
-            </button>
-          </div>
-          <input
-            name="progress"
-            type="range"
-            min="0"
-            max="100"
-            value={playerState.progress}
-            onChange={(e) => handleVideoProgress(e)}
-          />
-          {/* <label htmlFor="volume">Volume</label> */}
 
-          <select
-            className="velocity"
-            value={playerState.speed}
-            onChange={(e) => handleVideoSpeed(e)}
+        <button
+          id="play-pause-button"
+          onMouseOver={handleMouseOver}
+          onClick={togglePlay}
+          className={isHovered ? "active" : "hidden"}
+        >
+          {!playerState.isPlaying ? (
+            <img src="/astro/images/play-button.svg" alt="Play" />
+          ) : (
+            <img src="/astro/images/pause-button.svg" alt="Pause" />
+          )}
+        </button>
+
+        <button
+          id="mute-button"
+          onMouseOver={handleMouseOver}
+          className={isHovered ? "active" : "hidden"}
+          onClick={toggleMute}
+        >
+          {!playerState.isMuted ? (
+            <i className="bx bxs-volume-full"></i>
+          ) : (
+            <i className="bx bxs-volume-mute"></i>
+          )}
+        </button>
+
+        {hasSubs && (
+          <button
+            className={isHovered ? "active" : "hidden"}
+            id="caption-btn"
+            onMouseOver={handleMouseOver}
+            onClick={toggleCaptions}
           >
-            <option value="0.50">0.50x</option>
-            <option value="1">1x</option>
-            <option value="1.25">1.25x</option>
-            <option value="2">2x</option>
-          </select>
-          <button className="mute-btn" onClick={toggleMute}>
-            {!playerState.isMuted ? (
-              <i className="bx bxs-volume-full"></i>
-            ) : (
-              <i className="bx bxs-volume-mute"></i>
-            )}
-          </button>
-          <button className="caption-btn" onClick={toggleCaptions}>
             {!showCaptions ? (
               <i className="bx bx-captions"></i>
             ) : (
               <i className="bx bxs-captions"></i>
             )}
           </button>
-        </div>
+        )}
       </div>
     </div>
   );
