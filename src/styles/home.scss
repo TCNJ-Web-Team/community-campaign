@@ -443,11 +443,61 @@ footer {
   }
 }
 @media screen and (max-width: 1050px) {
+  .intro {
+    position: relative;
+
+    flex-direction: column;
+    align-items: center;
+    #hero-bg {
+      position: absolute;
+      top: 0;
+    }
+    #hero-image {
+      position: absolute;
+      top: 0;
+    }
+    #banner {
+      position: relative;
+      margin-top: 31.5vw;
+      top: 0;
+      #inner-banner {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
   .wrapper {
     &#tcnj-spirit {
       flex-direction: column-reverse;
+      margin-top: 150px;
+      margin-bottom: 0px;
+      padding-bottom: 100px;
       h2 {
         max-width: none;
+      }
+      .text-container {
+        padding: 0 50px;
+      }
+    }
+    &#tcnj-spirit,
+    &#carousel {
+      width: calc(100% - 100px);
+    }
+    &#carousel {
+      padding-top: 150px;
+    }
+    &#tcnj-spirit {
+      // width: 100%;
+      background-image: url("/astro/images/yellow-bg-small.jpg");
+      background-size: cover;
+      padding-left: 50px;
+      padding-right: 50px;
+      background-repeat: no-repeat;
+      // background-position-y: bottom;
+      background-position-x: 0;
+      background-position-y: 22vw;
+      .overlay-container #yellow-bg {
+        display: none !important;
+        opacity: 0 !important;
       }
     }
     // width: calc(100% - 200px);
@@ -467,6 +517,11 @@ footer {
       position: relative;
       z-index: 100;
     }
+  }
+}
+@media screen and (max-width: 850px) {
+  .wrapper {
+    width: calc(100% - 100px);
   }
 }
 @media screen and (max-width: 800px) {
@@ -489,6 +544,9 @@ footer {
   }
   .button-link {
     width: auto;
+  }
+  .wrapper .overlay-container #shield-image {
+    border-radius: 0 0 150px 0;
   }
 }
 @media screen and (max-width: 650px) {
