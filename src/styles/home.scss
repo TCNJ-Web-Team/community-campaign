@@ -360,6 +360,9 @@ footer {
   #logo {
     width: 90%;
   }
+  #tcnj-logo {
+    height: 45px;
+  }
   .intro {
     #banner {
       // padding: 0;
@@ -376,6 +379,17 @@ footer {
     #hero-image {
       // margin-bottom: 17.5vw;
       margin-bottom: 42.5vw;
+    }
+  }
+  .wrapper {
+    width: calc(100% - 200px);
+    .overlay-container {
+      overflow: visible;
+      width: 465px;
+      #yellow-bg {
+        width: 650px;
+        top: 150px;
+      }
     }
   }
 }
@@ -405,11 +419,48 @@ footer {
       width: calc(100% - 50px);
     }
   }
+  .wrapper {
+    // width: calc(100% - 200px);
+    .overlay-container {
+      width: 365px;
+      padding-top: 100px;
+      #yellow-bg {
+        width: 550px;
+        top: 200px;
+      }
+    }
+  }
 }
-
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    &#tcnj-spirit {
+      flex-direction: column-reverse;
+      h2 {
+        max-width: none;
+      }
+    }
+    // width: calc(100% - 200px);
+    .overlay-container {
+      width: 80%;
+      padding-top: 0px;
+      #yellow-bg {
+        width: 1150px;
+        top: 300px;
+      }
+    }
+    .text-container {
+      position: relative;
+      z-index: 100;
+    }
+  }
+}
 @media screen and (max-width: 800px) {
   #logo {
     width: 80%;
+  }
+  header {
+    width: calc(100% - 50px);
+    margin: 0 auto;
   }
   .intro {
     margin: 0;
@@ -426,6 +477,9 @@ footer {
   }
 }
 @media screen and (max-width: 650px) {
+  #tcnj-logo {
+    height: 35px;
+  }
   .intro {
     #banner {
       width: calc(100% - 50px);
