@@ -173,21 +173,23 @@ header {
     // top: calc((646px / 1433px) * 100);
     // top: 45.0802512212142%;
     z-index: 100;
-    max-width: calc(1130px - 195px * 2);
+    // max-width: calc(1130px - 195px * 2);
+    max-width: 1130px;
     height: auto;
     width: 100%;
     margin: 0 auto;
     // height: 787px;
     background: linear-gradient(rgba(255, 253, 244, 0.92) 0%, #fffdf4 100%);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 75px 195px;
-    align-items: center;
-    justify-content: center;
-    gap: 35px;
     animation: fadeIn 1.75s ease forwards;
-
+    #inner-banner {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      padding: 75px 195px;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+    }
     #svg-container {
       max-width: 635px;
       width: 100%;
@@ -348,9 +350,9 @@ footer {
     }
     #banner {
       // padding: 0;
-      width: fit-content;
-      padding-left: 10%;
-      padding-right: 10%;
+      width: calc(100% - 200px);
+      // padding-left: 10%;
+      // padding-right: 10%;
     }
   }
 }
@@ -362,10 +364,13 @@ footer {
     #banner {
       // padding: 0;
       // width: fit-content;
-      padding-left: 5%;
-      padding-right: 5%;
+      // padding-left: 5%;
+      // padding-right: 5%;
       p {
         font-size: 22px;
+      }
+      #inner-banner {
+        padding: 5vw 10vw;
       }
     }
     #hero-image {
@@ -375,16 +380,25 @@ footer {
   }
 }
 @media screen and (max-width: 1100px) {
+  #logo {
+    width: 70%;
+  }
   .intro {
     #banner {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      width: 58%;
-      padding-left: 10%;
-      padding-right: 10%;
+      width: calc(100% - 150px);
+
+      // padding-top: 50px;
+      // padding-bottom: 50px;
+      // width: 58%;
+      // padding-left: 10%;
+      // padding-right: 10%;
       p {
-        font-size: clamp(18px, 2.5vw, 22px);
-        line-height: 32px;
+        font-size: clamp(16px, 2.5vw, 22px);
+        line-height: 35px;
+      }
+      #inner-banner {
+        gap: 20px;
+        padding: 10vw 10vw;
       }
     }
     #hero-image {
@@ -393,12 +407,28 @@ footer {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  #logo {
+    width: 80%;
+  }
   .intro {
     margin: 0;
+    #banner {
+      width: calc(100% - 100px);
+    }
     #hero-image {
       padding-top: 25px;
       width: calc(100% - 25px);
+    }
+  }
+  .button-link {
+    width: auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .intro {
+    #banner {
+      width: calc(100% - 50px);
     }
   }
 }
