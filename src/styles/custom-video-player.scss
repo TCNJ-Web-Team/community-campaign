@@ -1,12 +1,66 @@
 $scrubButtonColor: white;
 $trackColor: #606060;
 
+#play-pause-button {
+  // pointer-events: none;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.25));
+}
+
+#play-pause-button,
+#mute-button,
+#caption-btn {
+  width: 125px;
+  height: 125px;
+  display: block;
+  position: absolute;
+  border: 0;
+  background-color: transparent;
+  // &.active {
+  //   opacity: 1;
+  // }
+  // &.hidden {
+  //   opacity: 0;
+  // }
+  &.active,
+  &.hidden {
+    opacity: 0;
+    transition: opacity 0.3s; /* You can adjust the duration (0.3s) as needed */
+  }
+
+  /* Styles for .active class when it's active */
+  &.active {
+    opacity: 1;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+#mute-button {
+  top: 50px;
+  right: 50px;
+  width: fit-content;
+  height: fit-content;
+}
+#caption-btn {
+  top: 50px;
+  left: 50px;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+}
+.swiper-slide {
+  img {
+    cursor: pointer;
+  }
+}
 .video-wrCustomVideoer {
   display: flex;
   justify-content: center;
   align-items: center;
   //   height: 100vh;
   position: relative;
+  cursor: pointer;
 }
 
 h1 {
@@ -52,14 +106,14 @@ video {
   transition: all 0.3s ease-in-out;
 }
 
-.actions button {
+.video-wrCustomVideoer button {
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-.actions button i {
+.video-wrCustomVideoer button i {
   background-color: none;
   color: white;
   font-size: 30px;

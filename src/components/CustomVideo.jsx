@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "../styles/custom-video-player.scss";
 
 // import video from "../assets/video.mp4";
@@ -7,15 +7,26 @@ import useVideoPlayer from "../hooks/useVideoPlayer";
 
 const CustomVideo = () => {
   const [showCaptions, setShowCaptions] = useState(false); // Add state variable
-  const [isHovered, setIsHovered] = useState(null);
+  const [isHovered, setIsHovered] = useState(true);
+  const [hasSubs, setHasSubs] = useState(true); // State to track subtitles
+
   const handleMouseOver = () => {
     setIsHovered(true);
   };
 
   const videoElement = useRef(null);
-  const trueElement = true;
+  // useEffect(() => {
+  //   // Use useEffect to check if the video has subtitles on mount
+  //   if (videoElement.current) {
+  //     const videoTracks = videoElement.current.textTracks;
+  //     const hasCaptions = Array.from(videoTracks).some(
+  //       (track) => track.kind === "captions" && track.mode === "showing"
+  //     );
+  //     setHasSubs(hasCaptions);
+  //   }
+  // }, []);
+
   const falseElement = false;
-  const hasSubs = false;
   // Function to toggle the captions
   const toggleCaptions = () => {
     setShowCaptions(!showCaptions);
@@ -65,39 +76,47 @@ const CustomVideo = () => {
             src="/astro/diamond-1.vtt"
           ></track>
         </video>
-        <div className="controls" onMouseOver={handleMouseOver}>
-          <div className="actions">
-            <button onClick={togglePlay}>
-              {!playerState.isPlaying ? (
-                <i className="bx bx-play"></i>
-              ) : (
-                <i className="bx bx-pause"></i>
-              )}
-            </button>
-          </div>
-          {isHovered && (
-            <button
-              onMouseOver={handleMouseOver}
-              className="mute-btn"
-              onClick={toggleMute}
-            >
-              {!playerState.isMuted ? (
-                <i className="bx bxs-volume-full"></i>
-              ) : (
-                <i className="bx bxs-volume-mute"></i>
-              )}
-            </button>
+
+        <button
+          id="play-pause-button"
+          onMouseOver={handleMouseOver}
+          onClick={togglePlay}
+          className={isHovered ? "active" : "hidden"}
+        >
+          {!playerState.isPlaying ? (
+            <img src="/astro/images/play-button.svg" alt="Play" />
+          ) : (
+            <img src="/astro/images/pause-button.svg" alt="Pause" />
           )}
-          {hasSubs && (
-            <button className="caption-btn" onClick={toggleCaptions}>
-              {!showCaptions ? (
-                <i className="bx bx-captions"></i>
-              ) : (
-                <i className="bx bxs-captions"></i>
-              )}
-            </button>
+        </button>
+
+        <button
+          id="mute-button"
+          onMouseOver={handleMouseOver}
+          className={isHovered ? "active" : "hidden"}
+          onClick={toggleMute}
+        >
+          {!playerState.isMuted ? (
+            <i className="bx bxs-volume-full"></i>
+          ) : (
+            <i className="bx bxs-volume-mute"></i>
           )}
-        </div>
+        </button>
+
+        {hasSubs && (
+          <button
+            className={isHovered ? "active" : "hidden"}
+            id="caption-btn"
+            onMouseOver={handleMouseOver}
+            onClick={toggleCaptions}
+          >
+            {!showCaptions ? (
+              <i className="bx bx-captions"></i>
+            ) : (
+              <i className="bx bxs-captions"></i>
+            )}
+          </button>
+        )}
       </div>
     </div>
   );
