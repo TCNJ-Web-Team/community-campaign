@@ -551,11 +551,17 @@ footer {
       width: calc(100% - 50px);
     }
   }
-  #opportunties {
+  .banner {
     width: 100%;
   }
-  #carousel #carousel-body,
   #opportunties {
+    width: calc(100% - 100px);
+    p {
+      font-size: clamp(16px, 2.5vw, 22px);
+      line-height: 35px;
+    }
+  }
+  #carousel #carousel-body {
     padding: 15px 0px 30px;
     p {
       font-size: clamp(16px, 2.5vw, 22px);
@@ -603,14 +609,41 @@ footer {
       width: calc(100% - 50px);
     }
   }
-  .wrapper#tcnj-spirit {
-    h2 {
-      font-size: 28px;
-      line-height: 40px;
+  .wrapper {
+    &#tcnj-spirit {
+      margin-top: 75px;
+      padding-bottom: 75px;
+      h2 {
+        font-size: 28px;
+        line-height: 40px;
+      }
+      .text-container {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        h2,
+        p {
+          text-align: center;
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+      .overlay-container #shield-image {
+        border-radius: 0 0 75px 0;
+      }
     }
-    .text-container {
-      padding-left: 0;
-      padding-right: 0;
+    &#carousel {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    &#opportunties {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      h2 {
+        font-size: 28px;
+        line-height: 40px;
+      }
     }
   }
   // .wrapper {
@@ -622,6 +655,12 @@ footer {
       font-size: 16px;
     }
   }
+  footer {
+    padding: 75px 0;
+    hr {
+      margin: 50px 0 35px;
+    }
+  }
   .intro #banner p,
   #carousel #carousel-body p,
   #opportunties p {
@@ -630,5 +669,15 @@ footer {
   .intro #banner #inner-banner {
     gap: 20px;
     padding: 7vw 5vw;
+  }
+  header {
+    width: calc(100% - 35px);
+    padding: 0;
+    a {
+      font-style: 14px;
+      &:after {
+        height: 15px;
+      }
+    }
   }
 }
