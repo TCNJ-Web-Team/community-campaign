@@ -57,7 +57,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
-        spaceBetween={40}
+        // spaceBetween={40}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
@@ -78,7 +78,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={40}
+        // spaceBetween={40}
         slidesPerView={3}
         freeMode={true}
         watchSlidesProgress={true}
