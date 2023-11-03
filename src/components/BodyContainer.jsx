@@ -1,12 +1,44 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
+const imageSources = [
+  {
+    src: "/astro/images/walkthrough-full.jpg",
+    mediaQuery: "(max-width: 1050px)",
+  },
+  { src: "/astro/images/walkthrough.png" }, // Default source
+];
+
 export default function BodyContainer({ children, idName }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
   const image1Controls = useAnimation();
   const image2Controls = useAnimation();
+  const [source, setSource] = useState(
+    imageSources[imageSources.length - 1].src
+  );
+
+  useEffect(() => {
+    const updateSource = () => {
+      for (const source of imageSources) {
+        if (source.mediaQuery && window.matchMedia(source.mediaQuery).matches) {
+          setSource(source.src);
+          return;
+        }
+      }
+      setSource(imageSources[imageSources.length - 1].src);
+    };
+
+    // Make the initial source selection and listen for window resize events
+    updateSource();
+    window.addEventListener("resize", updateSource);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateSource);
+    };
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -33,13 +65,9 @@ export default function BodyContainer({ children, idName }) {
       </motion.div>
       <div className="overlay-container">
         <motion.img
-          src="/astro/images/walkthrough.png"
+          src={source}
           alt="Pavillion Rendering Walkthrough"
           id="shield-image"
-          // initial={{ opacity: 0, x: -25 }}
-          // whileInView={{ opacity: 1, x: 0 }}
-          // viewport={{ once: true }}
-          // transition={{ duration: 0.75, delay: 0.9 }}
           variants={{
             hidden: { opacity: 0, x: -25 },
             visibleShield: { opacity: 1, x: 0 },
@@ -52,11 +80,6 @@ export default function BodyContainer({ children, idName }) {
           src="/astro/images/yellow-bg-small.jpg"
           alt="yellow background"
           id="yellow-bg"
-          // initial={{ opacity: 0, x: 95 }}
-          // whileInView={{ opacity: 1, x: 0 }}
-          // viewport={{ once: true }}
-          // transition={{ duration: 0.75, delay: 0.35 }}
-
           variants={{
             hidden: { opacity: 0, x: 95 },
             visibleYellow: { opacity: 1, x: 0 },
@@ -65,19 +88,6 @@ export default function BodyContainer({ children, idName }) {
           animate={image2Controls}
           transition={{ duration: 0.75, delay: 0.6 }}
         />
-        {/* <motion.img
-          layout={true}
-          src="/astro/images/yellow-bg-small.svg"
-          alt="yellow background"
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          id="yellow-bg"
-          initial="hidden"
-          animate={image2Controls} // Use the individual control for the second image
-          transition={{ duration: 0.5 }}
-        /> */}
       </div>
     </div>
   );
