@@ -307,7 +307,98 @@ footer {
 
     #hero-image {
       width: calc(100% - 100px);
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 17.5vw;
+      // margin-bottom: 34.5vw;
+    }
+    #hero-bg {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height: auto;
+      object-fit: inherit;
+    }
+    #banner {
+      top: 33.5vw; /* Adjust the scaling factor as needed */
+    }
+  }
+}
+@media screen and (max-width: 1800px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 24.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1600px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 32.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .intro {
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 42.5vw;
+    }
+    #banner {
+      // padding: 0;
+      width: fit-content;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  #logo {
+    width: 90%;
+  }
+  .intro {
+    #banner {
+      // padding: 0;
+      // width: fit-content;
+      padding-left: 5%;
+      padding-right: 5%;
+      p {
+        font-size: 22px;
+      }
+    }
+    #hero-image {
+      // margin-bottom: 17.5vw;
+      margin-bottom: 42.5vw;
+    }
+  }
+}
+@media screen and (max-width: 1100px) {
+  .intro {
+    #banner {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      width: 58%;
+      padding-left: 10%;
+      padding-right: 10%;
+      p {
+        font-size: clamp(18px, 2.5vw, 22px);
+        line-height: 32px;
+      }
+    }
+    #hero-image {
+      width: calc(100% - 50px);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .intro {
+    margin: 0;
+    #hero-image {
+      padding-top: 25px;
+      width: calc(100% - 25px);
     }
   }
 }
