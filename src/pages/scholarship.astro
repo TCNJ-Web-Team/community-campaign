@@ -1,0 +1,100 @@
+---
+import Intro from "../components/Intro.astro";
+import BodyContainer from "../components/BodyContainer";
+import Scroll from "../components/Test";
+import "../styles/home.scss";
+import Header from "../components/Header";
+import CarouselContainer from "../components/CarouselContainer";
+import VideoComponent from "../components/VideoComponent";
+import CustomVideo from "../components/CustomVideo";
+
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer";
+import GiveBanner from "../components/GiveBanner";
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/raleway/400.css";
+import "@fontsource/raleway/500.css";
+import "@fontsource/raleway/600.css";
+import "@fontsource/open-sans";
+---
+
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+
+<!-- <link
+  rel="stylesheet"
+  href="https://video-react.github.io/assets/video-react.css"
+/> -->
+<Layout title="For the Love of Community">
+  <main>
+    <!-- <ParallaxContainer
+      image="https://tcnj.edu/custom/homepage/img/homepage-slides/fall-23/compressed/slide-1.jpg"
+      alt="the cat"
+      strength={200}
+      client:load
+      align="right"
+    > -->
+    <!-- <Scroll client:load/> -->
+    <Header />
+    <Intro
+      body="Through the building of the TCNJ Pavilion, the TCNJ community will join together for musical and dramatic performances, lectures and debates, and ceremonies and presentations that spark interdisciplinary connections among learners, researchers, innovators, students, and community members."
+      buttonText="Invest in Community"
+      buttonLink="#"
+    />
+    <!-- <ParallaxContainer
+      image="https://tcnj.edu/custom/homepage/img/homepage-slides/fall-23/compressed/slide-1.jpg"
+      alt="the cat"
+      strength={200}
+      client:load
+      align="right"
+      > -->
+    <!-- <CustomVideo client:load /> -->
+    <BodyContainer idName="tcnj-spirit" client:load>
+      <h2>
+        The spirit of The College of New Jersey embodies collaboration,
+        creativity, accessibility, and inclusion.
+      </h2>
+      <p>
+        The building structure will integrate flexibility, sustainability, and
+        efficient space utilization with acoustics and performance technologies.
+        Integral to the flexible functionality of the building is a retractable
+        door that opens to a covered, multi-purpose outdoor seating area. The
+        Pavilion will function year-round in a central location on campus. This
+        innovative public space will provide an ideal location for next-level
+        partnerships: Think science and business researchers joined by scholars,
+        dancers, artists, and linguists to explore their interdisciplinary and
+        creative potential.
+      </p>
+    </BodyContainer>
+
+    <GiveBanner client:load>
+      <h2>Giving Opportunities</h2>
+      <p>
+        Please join the TCNJ community in support of this important new project.
+        Whether through an individual gift or sponsorship, there are numerous
+        ways to be involved with the creation of the TCNJ Pavilion.
+      </p>
+
+      <p>
+        Naming opportunities will underwrite various aspects of programming
+        provided through the TCNJ Pavilion, including but not limited to support
+        for the naming of the space/facility; recurring programs and
+        initiatives; student organizations’ use of the space; lecture series and
+        scholarly panels; and visiting artists and scholar-in-residence
+        fellowships.
+      </p>
+      <a class="button-link">Give Online</a>
+    </GiveBanner>
+    <Footer client:load>
+      <p id="contact-info" class="wrapper">
+        General contact info with email@tcnj.edu and 609-771-5555 / 800.347.5555
+      </p>
+      <hr />
+      <img src="/astro/images/tcnj-logo-footer.png" alt="TCNJ" />
+    </Footer>
+    <!-- <VideoComponent client:load /> -->
+  </main>
+</Layout>
