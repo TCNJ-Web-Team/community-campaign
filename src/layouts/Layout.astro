@@ -1,12 +1,15 @@
 ---
+import Scholarship from "../pages/scholarship.astro";
 interface Props {
   title: string;
   description?: string;
   image?: string;
+  scholarship?: boolean;
 }
 
 const {
   title,
+  scholarship,
   description = "The College of New Jersey has the opportunity to build a new indoor/outdoor structure – the TCNJ Community Hub – that will serve as a setting for community engagement, music and drama rehearsals, visiting and faculty lecturers, competition presentations, and performances.",
   image = "https://brand.tcnj.edu/wp-content/uploads/sites/11/2016/03/site-brand-downloads-logo-horizontal-FINAL-546-160.png",
 } = Astro.props;
@@ -16,11 +19,28 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="preload" href="/astro/images/hero.png" as="image" />
+    {
+      !scholarship && (
+        <>
+          <link rel="preload" href="/astro/images/hero.png" as="image" />
+          <link rel="preload" href="/astro/images/walkthrough.png" as="image" />
+        </>
+      )
+    }
     <link rel="preload" href="/astro/images/hero-bg.jpg" as="image" />
-    <link rel="preload" href="/astro/images/walkthrough.png" as="image" />
     <link rel="preload" href="/astro/images/yellow-bg-small.jpg" as="image" />
-
+    {
+      scholarship && (
+        <>
+          <link
+            rel="preload"
+            href="/astro/images/hero-scholarship.png"
+            as="image"
+          />
+          <link rel="preload" href="/astro/images/group.png" as="image" />
+        </>
+      )
+    }
     <meta
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"

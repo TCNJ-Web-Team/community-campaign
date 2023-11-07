@@ -1,15 +1,36 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-const imageSources = [
-  {
-    src: "/astro/images/walkthrough-full.jpg",
-    mediaQuery: "(max-width: 1050px)",
-  },
-  { src: "/astro/images/walkthrough.png" }, // Default source
-];
-
-export default function BodyContainer({ children, idName }) {
+export default function BodyContainer({ children, idName, scholarship }) {
+  // const imageSources = !scholarship [
+  //   {
+  //     src: "/astro/images/walkthrough-full.jpg",
+  //     mediaQuery: "(max-width: 1050px)",
+  //   },
+  //   { src: "/astro/images/walkthrough.png" }, // Default source
+  // ]  : [
+  //   {
+  //     src: "/astro/images/walkthrough-full.jpg",
+  //     mediaQuery: "(max-width: 1050px)",
+  //   },
+  //   { src: "/astro/images/walkthrough.png" }, // Default source
+  // ]
+  //   ;
+  const imageSources = !scholarship
+    ? [
+        {
+          src: "/astro/images/walkthrough-full.jpg",
+          mediaQuery: "(max-width: 1050px)",
+        },
+        { src: "/astro/images/walkthrough.png" }, // Default source
+      ]
+    : [
+        {
+          src: "/astro/images/group-full.jpg",
+          mediaQuery: "(max-width: 1050px)",
+        },
+        { src: "/astro/images/group.png" }, // Default source
+      ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
