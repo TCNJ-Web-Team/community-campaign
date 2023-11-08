@@ -82,6 +82,7 @@ header {
       background-image: url(/astro/images/right-arrow.svg);
       background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
     }
   }
 }
@@ -166,8 +167,30 @@ header {
     margin-bottom: 365px;
     position: relative;
     z-index: 11;
+
+    border-radius: 465px 0px 0px 0px;
+    /* background: url(...); */
+    // border: 1px solid rgba(0, 0, 0, 0);
+
     /* background: url(...); */
     // animation: fadeInAndSlide 1.25s ease forwards;
+    @media screen and (max-width: 2000px) {
+      border-radius: 24vw 0px 0px 0px;
+    }
+    // @media screen and (max-width: 1600px) {
+    //   border-radius: 365px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 1250px) {
+    //   border-radius: 265px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 1050px) {
+    //   border-radius: 165px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 850px) {
+    // }
+    // @media screen and (max-width: 500px) {
+    //   border-radius: 130px 0px 0px 0px;
+    // }
   }
   #hero-bg {
     position: absolute;
@@ -645,7 +668,7 @@ footer {
   //   padding-bottom: 75px !important;
   // }
   header {
-    a {
+    a#arrow-link {
       font-size: 16px;
     }
   }
@@ -672,10 +695,25 @@ footer {
   header {
     width: calc(100% - 35px);
     padding: 0;
-    a {
+    a#arrow-link {
       font-style: 14px;
       &:after {
         height: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #tcnj-logo {
+    height: 30px;
+  }
+  header {
+    a#arrow-link {
+      font-style: 12px;
+      &:after {
+        height: 13px;
+        width: 13px;
       }
     }
   }
