@@ -18,13 +18,9 @@ const { heading, body, buttonLink, buttonText, scholarship, heroImage } =
 
 <section class="intro">
   <!-- <CommunityLogoAnimation client:load /> -->
-  <img src="/astro/images/hero-bg.jpg" id="hero-bg" alt="Background yellow" />
-  <!-- <img src="/astro/images/hero.png" id="hero-image" alt="TCNJ Pavillion" /> -->
-  <img
-    src={"/astro/images/" + heroImage}
-    id="hero-image"
-    alt="TCNJ Pavillion"
-  />
+  <img src="../images/hero-bg.jpg" id="hero-bg" alt="Background yellow" />
+  <!-- <img src="/hero.png" id="hero-image" alt="TCNJ Pavillion" /> -->
+  <img src={"../images/" + heroImage} id="hero-image" alt="TCNJ Pavillion" />
 
   <div id="banner">
     <div id="inner-banner">

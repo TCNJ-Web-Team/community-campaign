@@ -116,10 +116,7 @@ const CarouselContainer = ({ carouselImages, children }) => {
         className="bottomSwiper"
       >
         <SwiperSlide>
-          <img
-            src="/astro/images/video-1-large.jpg"
-            alt="Pavilion Rendering 1"
-          />
+          <img src="../images/video-1-large.jpg" alt="Pavilion Rendering 1" />
         </SwiperSlide>
         {carouselImages &&
           carouselImages.map((image, index) => {
