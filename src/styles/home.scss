@@ -61,7 +61,7 @@ header {
   align-items: center;
   height: 115px;
   margin: 0 auto;
-  a {
+  #arrow-link {
     font-family: $raleway;
     font-weight: 600;
     font-size: 20px;
@@ -138,6 +138,9 @@ header {
 }
 #tcnj-logo {
   height: 45px;
+  img {
+    height: inherit;
+  }
 }
 .intro {
   position: relative;
