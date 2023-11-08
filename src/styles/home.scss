@@ -166,8 +166,30 @@ header {
     margin-bottom: 365px;
     position: relative;
     z-index: 11;
+
+    border-radius: 465px 0px 0px 0px;
+    /* background: url(...); */
+    // border: 1px solid rgba(0, 0, 0, 0);
+
     /* background: url(...); */
     // animation: fadeInAndSlide 1.25s ease forwards;
+    @media screen and (max-width: 2000px) {
+      border-radius: 24vw 0px 0px 0px;
+    }
+    // @media screen and (max-width: 1600px) {
+    //   border-radius: 365px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 1250px) {
+    //   border-radius: 265px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 1050px) {
+    //   border-radius: 165px 0px 0px 0px;
+    // }
+    // @media screen and (max-width: 850px) {
+    // }
+    // @media screen and (max-width: 500px) {
+    //   border-radius: 130px 0px 0px 0px;
+    // }
   }
   #hero-bg {
     position: absolute;
