@@ -635,6 +635,9 @@ footer {
   #tcnj-logo {
     height: 35px;
   }
+  #logo {
+    max-height: 135px;
+  }
   .intro {
     #banner {
       width: calc(100% - 50px);
@@ -732,6 +735,13 @@ footer {
       &:after {
         height: 13px;
         width: 13px;
+      }
+    }
+  }
+  .wrapper {
+    &#opportunties {
+      h2 {
+        line-height: 35px;
       }
     }
   }
