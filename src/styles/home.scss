@@ -82,6 +82,7 @@ header {
       background-image: url(/astro/images/right-arrow.svg);
       background-repeat: no-repeat;
       background-size: contain;
+      background-position: center;
     }
   }
 }
@@ -667,7 +668,7 @@ footer {
   //   padding-bottom: 75px !important;
   // }
   header {
-    a {
+    a#arrow-link {
       font-size: 16px;
     }
   }
@@ -694,10 +695,25 @@ footer {
   header {
     width: calc(100% - 35px);
     padding: 0;
-    a {
+    a#arrow-link {
       font-style: 14px;
       &:after {
         height: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #tcnj-logo {
+    height: 30px;
+  }
+  header {
+    a#arrow-link {
+      font-style: 12px;
+      &:after {
+        height: 13px;
+        width: 13px;
       }
     }
   }
