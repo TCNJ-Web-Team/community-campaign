@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime.b9e88e07.js";import"./index.03be2d59.js";function s({children:t}){const e=new Date().getFullYear();return r.jsxs("footer",{id:"footer",children:[t,r.jsxs("span",{children:["Copyright ©",e]})]})}export{s as default};

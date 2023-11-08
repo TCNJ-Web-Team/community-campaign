@@ -4,32 +4,32 @@ import { motion, useInView, useAnimation } from "framer-motion";
 export default function BodyContainer({ children, idName, scholarship }) {
   // const imageSources = !scholarship [
   //   {
-  //     src: "/astro/images/walkthrough-full.jpg",
+  //     src: "/walkthrough-full.jpg",
   //     mediaQuery: "(max-width: 1050px)",
   //   },
-  //   { src: "/astro/images/walkthrough.png" }, // Default source
+  //   { src: "/walkthrough.png" }, // Default source
   // ]  : [
   //   {
-  //     src: "/astro/images/walkthrough-full.jpg",
+  //     src: "/walkthrough-full.jpg",
   //     mediaQuery: "(max-width: 1050px)",
   //   },
-  //   { src: "/astro/images/walkthrough.png" }, // Default source
+  //   { src: "/walkthrough.png" }, // Default source
   // ]
   //   ;
   const imageSources = !scholarship
     ? [
         {
-          src: "/astro/images/walkthrough-full.jpg",
+          src: "../images/walkthrough-full.jpg",
           mediaQuery: "(max-width: 1050px)",
         },
-        { src: "/astro/images/walkthrough.png" }, // Default source
+        { src: "../images/walkthrough.png" }, // Default source
       ]
     : [
         {
-          src: "/astro/images/group-full.jpg",
+          src: "../images/group-full.jpg",
           mediaQuery: "(max-width: 1050px)",
         },
-        { src: "/astro/images/group.png" }, // Default source
+        { src: "../images/group.png" }, // Default source
       ];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -109,7 +109,7 @@ export default function BodyContainer({ children, idName, scholarship }) {
         />
         {!isWindowBelow1050 && (
           <motion.img
-            src="/astro/images/yellow-bg-small.jpg"
+            src="../images/yellow-bg-small.jpg"
             alt="yellow background"
             id="yellow-bg"
             variants={{

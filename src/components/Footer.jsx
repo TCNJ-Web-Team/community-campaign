@@ -4,6 +4,8 @@ export default function Footer({ children }) {
   return (
     <footer id="footer">
       {children}
+      <hr />
+      <img src="../images/tcnj-logo-footer.png" alt="TCNJ" />
       <span>Copyright ©{currentYear}</span>
     </footer>
   );

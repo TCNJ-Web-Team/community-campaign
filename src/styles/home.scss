@@ -79,7 +79,7 @@ header {
       width: 28px;
       height: 20px;
       margin-left: 0.5em;
-      background-image: url(/astro/images/right-arrow.svg);
+      background-image: url(../images/right-arrow.svg);
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -158,7 +158,7 @@ header {
   justify-content: center;
   overflow: visible;
   margin: 0 25px;
-  // background-image: url(/astro/images/hero-bg.jpg);
+  // background-image: url(/hero-bg.jpg);
   // background-size: cover;
   // background-size: 100% 857px;
   // background-repeat: no-repeat;
@@ -358,7 +358,7 @@ footer {
     overflow: hidden;
   }
   .intro {
-    // background-image: url(/astro/images/hero-bg.jpg);
+    // background-image: url(/hero-bg.jpg);
     // background-size: cover;
     // background-size: 100% 857px;
     // background-repeat: no-repeat;
@@ -540,7 +540,7 @@ footer {
     }
     &#tcnj-spirit {
       // width: 100%;
-      background-image: url("/astro/images/yellow-bg-small.jpg");
+      background-image: url("../images/yellow-bg-small.jpg");
       background-size: cover;
       padding-left: 50px;
       padding-right: 50px;
@@ -634,6 +634,9 @@ footer {
 @media screen and (max-width: 650px) {
   #tcnj-logo {
     height: 35px;
+  }
+  #logo {
+    max-height: 135px;
   }
   .intro {
     #banner {
@@ -732,6 +735,13 @@ footer {
       &:after {
         height: 13px;
         width: 13px;
+      }
+    }
+  }
+  .wrapper {
+    &#opportunties {
+      h2 {
+        line-height: 35px;
       }
     }
   }

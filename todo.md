@@ -10,12 +10,12 @@
 
 * [x] ~~_mobile hero needs more curve_~~ [2023-11-08]
 
-- [ ] style accordion header a p spacing
-- [ ] add hover for buttons
-- [ ] Animate support arrow on hover
+- [x] ~~_add hover for buttons_~~ [2023-11-08]
+
+- [x] ~~_style accordion header a p spacing_~~ [2023-11-08]
+- [x] ~~_Style mobile video buttons_~~ [2023-11-08]
+
 - [ ] Get TCNJ in svg form
 - [ ] Fix large desktop banner height
-
-- [ ] Style mobile video buttons
 
 - [ ] Compress images

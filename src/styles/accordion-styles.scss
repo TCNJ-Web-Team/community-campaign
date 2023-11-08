@@ -39,9 +39,16 @@ $raleway: "Raleway", sans-serif;
     text-transform: uppercase;
     text-align: center;
     display: block;
+    padding-bottom: 15px;
     @media screen and (max-width: 650px) {
       max-width: 400px;
-      margin: 0 auto;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block;
+      line-height: 35px;
+    }
+    @media screen and (max-width: 400px) {
+      max-width: 275px;
     }
     span {
       text-decoration: underline;
@@ -64,6 +71,21 @@ $raleway: "Raleway", sans-serif;
       .arrow {
         content: "-";
         // transform: rotate(180deg);
+      }
+    }
+  }
+  &#school-scholarships {
+    .accordion-header {
+      margin: 0;
+      margin-top: 50px;
+    }
+    .accordion-content {
+      p {
+        padding: 0;
+        margin: 0;
+      }
+      .button-link {
+        margin: 25px auto 75px;
       }
     }
   }

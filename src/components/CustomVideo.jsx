@@ -63,7 +63,7 @@ const CustomVideo = () => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
-          poster="/astro/images/video-1-large.jpg"
+          poster="../images/video-1-large.jpg"
           controls={falseElement}
           className={`video ${playerState.isPlaying ? "playing" : "stopped"}`}
           playsInline // Prevent fullscreen on modern browsers
@@ -94,9 +94,9 @@ const CustomVideo = () => {
           onTouchStart={handleTouchStart}
         >
           {!playerState.isPlaying ? (
-            <img src="/astro/images/play-button.svg" alt="Play" />
+            <img src="../images/play-button.svg" alt="Play" />
           ) : (
-            <img src="/astro/images/pause-button.svg" alt="Pause" />
+            <img src="../images/pause-button.svg" alt="Pause" />
           )}
         </button>
 
