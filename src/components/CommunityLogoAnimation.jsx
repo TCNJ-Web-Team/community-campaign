@@ -1,91 +1,103 @@
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 import "../styles/logo-styles.scss";
 
 const CommunityLogoAnimation = ({ scholarship }) => {
   let logoComponent = useRef();
   // console.log(scholarship);
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      let tlLine = gsap.timeline();
-      tlLine.fromTo(
-        "#logo",
-        { autoAlpha: 0, y: 20 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.25,
-          duration: 0.75,
-          delay: 0.25,
-          ease: "power1.out", // Apply Power1.easeInOut easing
-        },
-        0 // start time in tl
-      );
-      // COMMUNITY ANIMTION 1
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://tcnj.edu/custom/gsap/gsap.min.js"; // Replace with your actual static URL
+  //   script.async = true;
+  //   script.onload = () => {
+  //     // const { gsap } = window; // Access GSAP from the window object
 
-      // tlLine.fromTo(
-      //   ".cls-2",
-      //   { autoAlpha: 0, y: 20 },
-      //   {
-      //     autoAlpha: 1,
-      //     y: 0,
-      //     stagger: 0.25,
-      //     duration: 0.75,
-      //     delay: 0.25,
-      //     ease: "power1.out", // Apply Power1.easeInOut easing
-      //   },
-      //   0.75 // start time in tl
-      // );
-      tlLine.fromTo(
-        "#heart",
-        { autoAlpha: 0, scale: 1 },
-        {
-          autoAlpha: 1,
+  //     let tlLine = gsap.timeline();
+  //     tlLine.fromTo(
+  //       "#logo",
+  //       { autoAlpha: 0, y: 20 },
+  //       {
+  //         autoAlpha: 1,
+  //         y: 0,
+  //         stagger: 0.25,
+  //         duration: 0.75,
+  //         delay: 0.25,
+  //         ease: "power1.out", // Apply Power1.easeInOut easing
+  //       },
+  //       0 // start time in tl
+  //     );
+  //     // COMMUNITY ANIMTION 1
 
-          duration: 0.5,
-          scale: 1.1,
-          transformOrigin: () => "50% 50%",
+  //     // tlLine.fromTo(
+  //     //   ".cls-2",
+  //     //   { autoAlpha: 0, y: 20 },
+  //     //   {
+  //     //     autoAlpha: 1,
+  //     //     y: 0,
+  //     //     stagger: 0.25,
+  //     //     duration: 0.75,
+  //     //     delay: 0.25,
+  //     //     ease: "power1.out", // Apply Power1.easeInOut easing
+  //     //   },
+  //     //   0.75 // start time in tl
+  //     // );
+  //     tlLine.fromTo(
+  //       "#heart",
+  //       { autoAlpha: 0, scale: 1 },
+  //       {
+  //         autoAlpha: 1,
 
-          ease: "power1.in", // Apply Power1.easeInOut easing
-        },
-        1 // start time in tl
-      );
-      tlLine.to(
-        "#heart",
-        {
-          scale: 1,
-          duration: 0.75,
-          ease: "power1.out",
-          transformOrigin: () => "50% 50%",
-        },
-        1.5
-      );
+  //         duration: 0.5,
+  //         scale: 1.1,
+  //         transformOrigin: () => "50% 50%",
 
-      tlLine.to(
-        ".cls-1",
-        {
-          strokeDashoffset: 0,
-          duration: 0.75,
-          ease: "power2.out",
-        },
-        1
-      );
+  //         ease: "power1.in", // Apply Power1.easeInOut easing
+  //       },
+  //       1 // start time in tl
+  //     );
+  //     tlLine.to(
+  //       "#heart",
+  //       {
+  //         scale: 1,
+  //         duration: 0.75,
+  //         ease: "power1.out",
+  //         transformOrigin: () => "50% 50%",
+  //       },
+  //       1.5
+  //     );
 
-      // tlLine.to(
-      //   "#right-line",
-      //   {
-      //     strokeDashoffset: 0,
-      //     duration: 1,
+  //     tlLine.to(
+  //       ".cls-1",
+  //       {
+  //         strokeDashoffset: 0,
+  //         duration: 0.75,
+  //         ease: "power2.out",
+  //       },
+  //       1
+  //     );
 
-      //     ease: "power1.inOut",
-      //   },
-      //   0.5
-      // );
-    }, logoComponent); // <- selector scoping
-    return () => ctx.revert();
-  }, []);
+  //     // tlLine.to(
+  //     //   "#right-line",
+  //     //   {
+  //     //     strokeDashoffset: 0,
+  //     //     duration: 1,
+
+  //     //     ease: "power1.inOut",
+  //     //   },
+  //     //   0.5
+  //     // );
+  //     // let ctx = gsap.context(() => {
+
+  //     // }, logoComponent); // <- selector scoping
+  //     document.head.appendChild(script);
+  //   };
+  //   return () => {
+  //     // ctx.revert();
+  //     document.head.removeChild(script);
+  //   };
+  // }, []);
 
   return (
     <div id="svg-container" ref={logoComponent}>
