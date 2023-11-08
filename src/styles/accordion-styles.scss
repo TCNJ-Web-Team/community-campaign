@@ -1,3 +1,8 @@
+$dark-blue: #293f6f;
+$off-white: #fffdf4;
+$domine: "Domine", sans-serif;
+$raleway: "Raleway", sans-serif;
+
 /**
  * The following styles get applied both on the front of your site
  * and in the editor.
@@ -24,18 +29,39 @@
     font-size: 21px !important;
     line-height: 35px;
     margin-bottom: 0;
-    &::after {
+
+    font-family: $raleway;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 55px;
+    text-align: center;
+    color: $off-white;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    @media screen and (max-width: 650px) {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    span {
+      text-decoration: underline;
+    }
+    .arrow {
+      text-decoration: none;
+    }
+
+    .arrow {
       content: "+";
       display: inline-block;
-      // width: 10px;
-      // height: 10px;
+      width: 10px;
+      height: 10px;
       margin-left: 0.5em;
       // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='96' viewBox='0 0 110 96'%3E%3Cpath id='Polygon_1' data-name='Polygon 1' d='M55,0l55,96H0Z'/%3E%3C/svg%3E");
       // background-repeat: no-repeat;
       // background-size: contain;
     }
     &.active {
-      &::after {
+      .arrow {
         content: "-";
         // transform: rotate(180deg);
       }
@@ -62,6 +88,16 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    p {
+      a {
+        color: $off-white;
+      }
+    }
+    .button-link {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     &.active {
       max-height: 1000px; /* Adjust this value to suit your content */

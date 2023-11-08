@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import CarouselContainer from "../components/CarouselContainer";
 import VideoComponent from "../components/VideoComponent";
 import CustomVideo from "../components/CustomVideo";
+import Accodion from "../components/Accordion";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer";
@@ -75,6 +76,32 @@ import "@fontsource/open-sans";
         or expand upon — your own TCNJ legacy through a named or endowed
         scholarship.
       </p>
+      <Accodion
+        client:load
+        idName="school-scholarships"
+        header="School and Program Scholarships"
+        startOpen={true}
+      >
+        <p>
+          Scholarships can support students throughout the college or
+          specifically target one or more academic departments or schools.
+        </p>
+        <a class="button-link">Invest in Scholarships</a>
+      </Accodion>
+      <Accodion
+        client:load
+        idName="endowed-scholarships"
+        header="Endowed Scholarships"
+        startOpen={false}
+      >
+        <p>
+          Endowed scholarships enable the college to grow an investment over
+          time and support future generations of students in perpetuity.
+          Interested in learning more? Contact Laura Smith, leadership gift
+          officer, at <a href="tele:1-609-771-2218">609.771.2188</a> or
+          <a href="mailto:laura.smith@tcnj.edu"> laura.smith@tcnj.edu.</a>
+        </p>
+      </Accodion>
       <!-- <a class="button-link">Give Online</a> -->
     </GiveBanner>
     <Footer client:load>

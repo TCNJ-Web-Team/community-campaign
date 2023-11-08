@@ -48,6 +48,9 @@ p {
   line-height: 40px;
   text-align: left;
   color: #000;
+  a {
+    color: $dark-blue;
+  }
 }
 header {
   display: flex;
@@ -267,23 +270,7 @@ header {
     }
   }
 }
-#naming-opps {
-  h2 {
-    font-family: $raleway;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 55px;
-    text-align: center;
-    color: $off-white;
-    text-transform: uppercase;
-    span {
-      text-decoration: underline;
-    }
-    &:after {
-      text-decoration: none;
-    }
-  }
-}
+
 footer {
   width: calc(100% - 50px);
   margin: 0 auto;

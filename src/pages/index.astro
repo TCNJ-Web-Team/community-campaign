@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import CarouselContainer from "../components/CarouselContainer";
 import VideoComponent from "../components/VideoComponent";
 import CustomVideo from "../components/CustomVideo";
+import Accodion from "../components/Accordion";
 
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer";
@@ -53,7 +54,7 @@ import "@fontsource/open-sans";
       align="right"
       > -->
     <!-- <CustomVideo client:load /> -->
-    <BodyContainer idName="tcnj-spirit" client:load>
+    <BodyContainer idName="tcnj-spirit" scholarship={false} client:load>
       <h2>
         A design that embodies collaboration, creativity, accessibility, and
         inclusion.
@@ -103,6 +104,14 @@ import "@fontsource/open-sans";
         scholar-in-residence fellowships.
       </p>
       <a class="button-link">Give Online</a>
+      <Accodion
+        client:load
+        idName="naming-opps"
+        header="View the full list of naming opportunities"
+        startOpen={false}
+      >
+        <p>Content here</p>
+      </Accodion>
     </GiveBanner>
     <Footer client:load>
       <p id="contact-info" class="wrapper">
