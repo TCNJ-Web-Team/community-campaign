@@ -17,6 +17,7 @@ export default function Accodion({ children, header, idName, startOpen }) {
         onClick={onAccordionClick}
       >
         <span>{header}</span>
+        <span className="arrow">{open ? "-" : "+"}</span>
       </h2>
       <div
         className={`${

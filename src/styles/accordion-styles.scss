@@ -39,25 +39,29 @@ $raleway: "Raleway", sans-serif;
     text-transform: uppercase;
     text-align: center;
     display: block;
+    @media screen and (max-width: 650px) {
+      max-width: 400px;
+      margin: 0 auto;
+    }
     span {
       text-decoration: underline;
     }
-    &:after {
+    .arrow {
       text-decoration: none;
     }
 
-    &::after {
+    .arrow {
       content: "+";
       display: inline-block;
-      // width: 10px;
-      // height: 10px;
+      width: 10px;
+      height: 10px;
       margin-left: 0.5em;
       // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='96' viewBox='0 0 110 96'%3E%3Cpath id='Polygon_1' data-name='Polygon 1' d='M55,0l55,96H0Z'/%3E%3C/svg%3E");
       // background-repeat: no-repeat;
       // background-size: contain;
     }
     &.active {
-      &::after {
+      .arrow {
         content: "-";
         // transform: rotate(180deg);
       }
