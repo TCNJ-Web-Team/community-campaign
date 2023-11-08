@@ -8,6 +8,8 @@
 - [x] ~~_Add text "preliminary rendering subject to modification"_~~ [2023-11-08]
 - [x] ~~_Fix mobile video play buttons_~~ [2023-11-08]
 
+* [ ] mobile hero needs more curve
+
 - [ ] style accordion header a p spacing
 - [ ] add hover for buttons
 - [ ] Animate support arrow on hover
