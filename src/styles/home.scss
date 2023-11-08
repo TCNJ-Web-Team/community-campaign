@@ -101,6 +101,15 @@ header {
   justify-content: center;
   text-transform: uppercase;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    color: $dark-blue;
+    border: 2px solid $dark-blue;
+  }
 }
 .wrapper {
   max-width: 1130px;
@@ -188,9 +197,12 @@ header {
     // }
     // @media screen and (max-width: 850px) {
     // }
-    // @media screen and (max-width: 500px) {
-    //   border-radius: 130px 0px 0px 0px;
-    // }
+    @media screen and (max-width: 500px) {
+      border-radius: 130px 0px 0px 0px;
+    }
+    @media screen and (max-width: 400px) {
+      border-radius: 110px 0px 0px 0px;
+    }
   }
   #hero-bg {
     position: absolute;
@@ -293,6 +305,12 @@ header {
       background-color: $off-white;
       color: $dark-blue;
       margin: 75px 0;
+      &:hover,
+      &:focus {
+        color: $off-white;
+        background-color: $dark-blue;
+        border: 2px solid $off-white;
+      }
     }
   }
 }
