@@ -12,11 +12,11 @@
 
 - [x] ~~_add hover for buttons_~~ [2023-11-08]
 
-- [ ] style accordion header a p spacing
+- [x] ~~_style accordion header a p spacing_~~ [2023-11-08]
 
 - [ ] Get TCNJ in svg form
 - [ ] Fix large desktop banner height
 
-- [ ] Style mobile video buttons
+- [x] ~~_Style mobile video buttons_~~ [2023-11-08]
 
 - [ ] Compress images
