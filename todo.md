@@ -9,7 +9,7 @@
 * [ ] Get TCNJ in svg form
 
 - [x] ~~_Add full res images to slider_~~ [2023-11-08]
-- [ ] Add text "preliminary rendering subject to modification"
+- [x] ~~_Add text "preliminary rendering subject to modification"_~~ [2023-11-08]
 
 - [ ] Fix large desktop banner height
 - [ ] Fix mobile video play buttons

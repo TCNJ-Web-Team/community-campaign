@@ -85,13 +85,23 @@ const CarouselContainer = ({ carouselImages, children }) => {
         onSlideChange={stopVideos}
       >
         <SwiperSlide>
-          <CustomVideo client:load />
+          <figure>
+            <CustomVideo client:load />
+            <figcaption>
+              preliminary rendering subject to modification
+            </figcaption>
+          </figure>
         </SwiperSlide>
         {carouselImages &&
           carouselImages.map((image, index) => {
             return (
               <SwiperSlide key={index}>
-                <img src={image.image} alt={image.alt} />
+                <figure>
+                  <img src={image.image} alt={image.alt} />
+                  <figcaption>
+                    preliminary rendering subject to modification
+                  </figcaption>
+                </figure>
               </SwiperSlide>
             );
           })}

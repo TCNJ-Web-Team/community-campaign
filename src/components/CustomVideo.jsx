@@ -8,7 +8,7 @@ import useVideoPlayer from "../hooks/useVideoPlayer";
 const CustomVideo = () => {
   const [showCaptions, setShowCaptions] = useState(false); // Add state variable
   const [isHovered, setIsHovered] = useState(true);
-  const [hasSubs, setHasSubs] = useState(true); // State to track subtitles
+  const [hasSubs, setHasSubs] = useState(false); // State to track subtitles
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -55,7 +55,7 @@ const CustomVideo = () => {
           ref={videoElement}
           onTimeUpdate={handleOnTimeUpdate}
           onClick={togglePlay}
-          poster="/astro/images/video-screen.jpg"
+          poster="/astro/images/video-1-large.jpg"
           controls={falseElement}
           className={`video ${playerState.isPlaying ? "playing" : "stopped"}`}
           playsInline // Prevent fullscreen on modern browsers
@@ -68,13 +68,13 @@ const CustomVideo = () => {
             src="https://player.vimeo.com/progressive_redirect/playback/877982802/rendition/720p/file.mp4?loc=external&signature=bc200f96f6b07e8b374c471bda8ecca669eb66eb6ebc062747d83cee4bb49933"
           />
 
-          <track
+          {/* <track
             preload="true"
             kind="captions"
             label="Video Captions"
             srcLang="en"
             src="/astro/diamond-1.vtt"
-          ></track>
+          ></track> */}
         </video>
 
         <button
