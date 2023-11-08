@@ -13,7 +13,15 @@ const CustomVideo = () => {
   const handleMouseOver = () => {
     setIsHovered(true);
   };
+  const handleTouchStart = () => {
+    // console.log("Touch");
 
+    setIsHovered(true);
+    setTimeout(() => {
+      setIsHovered(!isHovered);
+      // Code to be executed after 2 seconds
+    }, 2000);
+  };
   const videoElement = useRef(null);
   // useEffect(() => {
   //   // Use useEffect to check if the video has subtitles on mount
@@ -62,6 +70,7 @@ const CustomVideo = () => {
           webkit-playsinline="true"
           onMouseOver={handleMouseOver}
           onMouseOut={() => setIsHovered(null)}
+          onTouchStart={handleTouchStart}
         >
           <source
             type="video/mp4"
@@ -82,6 +91,7 @@ const CustomVideo = () => {
           onMouseOver={handleMouseOver}
           onClick={togglePlay}
           className={isHovered ? "active" : "hidden"}
+          onTouchStart={handleTouchStart}
         >
           {!playerState.isPlaying ? (
             <img src="/astro/images/play-button.svg" alt="Play" />
