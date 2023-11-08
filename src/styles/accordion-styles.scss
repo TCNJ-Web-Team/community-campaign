@@ -1,3 +1,8 @@
+$dark-blue: #293f6f;
+$off-white: #fffdf4;
+$domine: "Domine", sans-serif;
+$raleway: "Raleway", sans-serif;
+
 /**
  * The following styles get applied both on the front of your site
  * and in the editor.
@@ -24,6 +29,23 @@
     font-size: 21px !important;
     line-height: 35px;
     margin-bottom: 0;
+
+    font-family: $raleway;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 55px;
+    text-align: center;
+    color: $off-white;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    span {
+      text-decoration: underline;
+    }
+    &:after {
+      text-decoration: none;
+    }
+
     &::after {
       content: "+";
       display: inline-block;
@@ -62,6 +84,16 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    p {
+      a {
+        color: $off-white;
+      }
+    }
+    .button-link {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     &.active {
       max-height: 1000px; /* Adjust this value to suit your content */

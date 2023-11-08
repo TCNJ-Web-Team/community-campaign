@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Accodion from "./Accordion";
 
 const GiveBanner = ({ children }) => {
   return (
@@ -15,12 +14,6 @@ const GiveBanner = ({ children }) => {
       >
         {children}
         {/* <h4>View the full list of naming opportunities +</h4> */}
-        <Accodion
-          idName="naming-opps"
-          header="View the full list of naming opportunities"
-        >
-          <p>Content here</p>
-        </Accodion>
       </motion.div>
     </div>
   );

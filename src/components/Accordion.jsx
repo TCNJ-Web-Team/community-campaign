@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "../styles/accordion-styles.scss";
 
-export default function Accodion({ children, header, idName }) {
-  const [open, setOpen] = useState(false);
+export default function Accodion({ children, header, idName, startOpen }) {
+  const [open, setOpen] = useState(startOpen);
 
   const onAccordionClick = () => {
     // console.log(event);
@@ -12,7 +12,7 @@ export default function Accodion({ children, header, idName }) {
     <div className="accordion" id={idName}>
       <h2
         className={`${
-          open ? "accordion-header start-open active test" : "accordion-header"
+          open ? "accordion-header start-open active" : "accordion-header"
         }`}
         onClick={onAccordionClick}
       >
