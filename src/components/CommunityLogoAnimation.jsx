@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 import "../styles/logo-styles.scss";
 

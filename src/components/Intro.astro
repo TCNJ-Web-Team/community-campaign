@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 // import heroImage from "../assets/hero.jpg";
-import CommunityLogoAnimation from "./CommunityLogoAnimation";
+// import CommunityLogoAnimation from "./CommunityLogoAnimation";
 // import CommunityLogoAnimation from "./CommunityLogoAnimation";
 interface Props {
   heading?: string;
@@ -24,7 +24,7 @@ const { heading, body, buttonLink, buttonText, scholarship, heroImage } =
 
   <div id="banner">
     <div id="inner-banner">
-      <CommunityLogoAnimation scholarship={scholarship} client:load />
+      <!-- <CommunityLogoAnimation scholarship={scholarship} client:load /> -->
       <!-- <h2>{heading}</h2> -->
       <p>{body}</p>
       {
