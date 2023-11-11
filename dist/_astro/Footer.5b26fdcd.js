@@ -1,1 +1,0 @@
-import{j as r}from"./jsx-runtime.b9e88e07.js";import"./index.03be2d59.js";function n({children:t}){const o=new Date().getFullYear();return r.jsxs("footer",{id:"footer",children:[t,r.jsx("hr",{}),r.jsx("img",{src:"../images/tcnj-logo-footer.png",alt:"TCNJ"}),r.jsxs("span",{children:["Copyright ©",o]})]})}export{n as default};
